@@ -6,16 +6,20 @@
     <link rel="stylesheet" href="./assets/styles/style.css">
     <link rel="stylesheet" href="./vendors/bootstrap.min.css">
 
-    <script type="text/javascript" src="./vendors/angular.min.js"></script>
+    <script type="text/javascript" src="./vendors/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./vendors/angular-route/angular-route.min.js"></script>
     <script type="text/javascript" src="./assets/scripts/app.min.js"></script>
+    <script type="text/javascript" src="./assets/scripts/controllers/controllers.min.js"></script>
 
 </head>
 
 
 <body>
-    <div ng-controller="PlantTestController"></div>
-    <div class="well">
-        <p>Testing</p>
-    </div>
+    <div ng-include="'/assets/views/templates/header.html'"></div>
+    <div ng-include="'/assets/views/templates/nav.html'"></div>
+
+    <main ng-view></main>
+
+
 </body>
 </html>
