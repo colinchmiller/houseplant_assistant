@@ -7,16 +7,19 @@ myApp.config(['$routeProvider', function($routeProvider){
         controller: 'PlantController'
     }).
         when('/plantulate',{
-        templateUrl: 'assets/views/routes/plantulate.html'
+        templateUrl: 'assets/views/routes/plantulate.html',
+        controller: 'WindowCriteriaController'
     }).
     when('/userpage',{
-        templateUrl: 'assets/views/routes/userpage.html'
+        templateUrl: 'assets/views/routes/userpage.html',
+        controller: 'RoomController'
     }).
     when('/notifications',{
         templateUrl: 'assets/views/routes/notifications.html'
     }).
     when('/login',{
-        templateUrl: 'assets/views/routes/login.html'
+        templateUrl: 'assets/views/routes/login.html',
+        controller: 'LoginController'
     }).
     when('/register',{
         templateUrl: 'assets/views/routes/register.html'
