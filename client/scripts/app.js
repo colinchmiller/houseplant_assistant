@@ -25,7 +25,7 @@ myApp.config(['$routeProvider', function($routeProvider){
         templateUrl: 'assets/views/routes/register.html'
     }).
         otherwise({
-        redirectTo: 'library'
+        redirectTo: 'login'
     })
 }]);
 

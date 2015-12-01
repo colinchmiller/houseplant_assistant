@@ -22,6 +22,7 @@ app.use(bodyParser.urlencoded({expanded: true}));
 //Passport Session Configuration
 app.use(session({
     secret: 'secret',
+    //the key matches the user being returned in login.js. Many Bathans died giving us this informatio;;
     key: 'user',
     resave: 'true',
     saveUnintialized: false,

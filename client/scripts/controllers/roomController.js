@@ -1,7 +1,7 @@
 myApp.controller('RoomController', ['$scope', '$http', function($scope, $http){
     console.log("RoomController is now running.");
 
-
+    var username;
 
     $scope.getUser = function() {
         $http({
@@ -9,7 +9,7 @@ myApp.controller('RoomController', ['$scope', '$http', function($scope, $http){
             url: "/login"
         }).then(
             function (response) {
-                console.log("This is the response: ", response);
+                username = response.data;
             });
     };
 
@@ -19,7 +19,7 @@ myApp.controller('RoomController', ['$scope', '$http', function($scope, $http){
             method: "GET",
             url: "/room",
             params: {
-                username: $scope.selectedUser.username
+                username: $scope.username
             }
         }).then(
             function(response){
@@ -27,7 +27,7 @@ myApp.controller('RoomController', ['$scope', '$http', function($scope, $http){
                 $scope.roomData = response.data;
             }
         )
-    }
+    };
 
     $scope.getUser();
 }]);

@@ -7,11 +7,13 @@ var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/ho
 //Using the username to get the rooms associated with that user
 router.get('/', function (req,res){
     results = [];
+    console.log("Is the correct req coming in?: ", req.user);
     pg.connect(connectionString, function(err, client, done){
-        var query = client.query("SELECT * FROM rooms  \
-        JOIN windowsassigned ON rooms.id = windowsassigned.room_id\
-        JOIN windows ON windowsassigned.window_id = windows.id\
-        WHERE user_id = $1", [req.query.username]);
+        var query = client.query("SELECT * FROM windows\
+            JOIN windowsassigned ON windowsassigned.window_id = windows.id\
+            JOIN rooms ON windowsassigned.room_id = rooms.id\
+            JOIN users ON rooms.user_id = users.id\
+            WHERE username = $1", [req.user]);
 
         query.on('row', function(row){
             results.push(row);
