@@ -12,8 +12,7 @@ router.get('/', function (req,res){
     pg.connect(connectionString, function(err, client, done){
         var query = client.query("SELECT name FROM windows \
             JOIN windowsassigned ON windowsassigned.window_id = windows.id \
-            JOIN rooms ON windowsassigned.room_id = rooms.id\
-            JOIN users on rooms.user_id = users.id\
+            JOIN users ON windowsassigned.user_id = users.id\
             WHERE username = $1", [req.user]);
 
         query.on('row', function(row){
@@ -29,6 +28,30 @@ router.get('/', function (req,res){
         if (err) {
             console.log(err);
         }
+    });
+});
+
+router.post('/', function (req, res){
+    var windowId = req.body.windowId;
+    var username = req.body.username;
+    pg.connect(connectionString, function(err, client){
+        client.query("INSERT INTO windowsassigned (window_id, user_id)\
+        SELECT $1, id FROM users\
+        WHERE username = $2",
+            [windowId, username],
+            function (err, response){
+                if (err){
+                    console.log(err);
+                } else{
+                    console.log("This is the res: ", response);
+                    client.end();
+                    res.send(response);
+                }
+            });
+        if (err){
+            console.log(err);
+        }
+
     });
 });
 

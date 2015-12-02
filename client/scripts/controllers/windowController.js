@@ -12,7 +12,7 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', function($scope
     $scope.plantsForWindow = [];
     $scope.windowData = [];
     $scope.windownames = [];
-    $scope.roomData = [];
+    //$scope.roomData = [];
 
 
     //////////Get Calls////////////////
@@ -25,19 +25,17 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', function($scope
         }).then(
             function (response) {
                 username = response.data;
-                $scope.getRoomData();
+                $scope.getWindows();;
             });
     };
 
     //Getting the window names by user
     $scope.getWindows = function(){
-        var roomName = $scope.selectedRoom.room_name;
-        console.log("What is the room_name for selectedRoom?: ", roomName);
         $http({
             method: "GET",
             url: "/windownames",
             params: {
-                roomId: roomName
+                username: username
             }
         }).then(
             function (response) {
@@ -89,23 +87,6 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', function($scope
         )
     };
 
-    $scope.getRoomData = function(){
-        $scope.roomData = [];
-        $http({
-            method: "GET",
-            url: "/roomlist",
-            params: {
-                username: $scope.username
-            }
-        }).then(
-            function(response){
-                $scope.roomData = response.data;
-                console.log("This is the roomData: ", $scope.roomData);
-                $scope.getWindows();
-            }
-        )
-    };
-
     ////////////Post calls//////////////
 
     $scope.saveWindow = function(){
@@ -118,8 +99,22 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', function($scope
           function(response){
               console.log("This is the post response: ", response);
               sendPlant(response.data.rows[0].id);
+              assignWindow(response.data.rows[0].id);
           }
       )
+    };
+
+    var assignWindow = function(windowId){
+        $http({
+            method:"POST",
+            url: "/windownames",
+            data: {windowId: windowId,
+            username: username}
+        }).then(
+            function(response){
+                console.log("The response from the windowassign upload: ", response);
+            }
+        )
     };
 
     var sendPlant = function(windowId){
@@ -133,6 +128,19 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', function($scope
                 console.log("The plant upload response: ", response);
             }
         )
+    };
+
+    /////////////Plant Suggestion Logic////////////////
+
+    $scope.suggestPlant = function(windowData){
+        $http({
+            method: "GET",
+            url: "/plants"
+        }).then(
+            function (response) {
+                console.log("Here is the plant response: ", response);
+                $scope.plants = response.data;
+            });
     };
 
     /////////////Execution on page load////////////////
