@@ -32,4 +32,30 @@ router.get('/', function (req,res){
     });
 });
 
+//posting plant and window data
+router.post('/', function (req, res){
+    console.log("This is the req.body: ", req.body);
+    var plantname = req.body.plantdata[0];
+    var windowId = req.body.windowId;
+    pg.connect(connectionString, function(err, client){
+        client.query("INSERT INTO plantsassigned (window_id, plant_id)\
+        SELECT $1, id FROM plants \
+        WHERE name = $2",
+            [windowId, plantname],
+            function (err, response){
+                if (err){
+                    console.log(err);
+                } else{
+                    console.log("This is the res: ", response);
+                    client.end();
+                    res.send(response);
+                }
+            });
+        if (err){
+            console.log(err);
+        }
+
+    });
+});
+
 module.exports = router;

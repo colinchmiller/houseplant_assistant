@@ -1,42 +1,46 @@
 <p>Plantulate a Room</p>
 
-<label for="findwindow">Find Window by Name:</label>
-<input type="text" name="findwindow" id="findwindow" ng-model="selectedWindow.name">
+<label for="windowlist">Select a Window:</label>
+<select ng-options="window.name for window in windownames" ng-model="selectedWindow" id="windowlist"></select>
+
+<!--<label for="findwindow">Find Window by Name:</label>-->
+<!--<input type="text" name="findwindow" id="findwindow" ng-model="selectedWindow.name">-->
 <button ng-click="getWindowData()" class="btn btn-info">Find Now</button>
 
 <!--filling the window criteria from a selected window-->
-<div class="container" ng-model="selectedWindow">
+<div class="container">
     <label>Window Criteria</label>
-    <form>
+    <form ng-model="windowData">
         <p>{{windowData[0].name}}</p>
         <div>
             <label for="name">Window Name:</label>
-            <input type="text" name="name" id="name" value={{windowData[0].name}}>
+            <input type="text" name="name" id="name" ng-model="windowData[0].name" value={{windowData[0].name}}>
         </div>
         <div class="dimensions">
             <label for="width">Width:</label>
-            <input type="text" name="width" id="width" value={{windowData[0].width}}>
+            <input type="text" name="width" id="width" ng-model="windowData[0].width" value={{windowData[0].width}}>
             <label for="height">Height:</label>
-            <input type="text" name="height" id="height" value={{windowData[0].height}}>
+            <input type="text" name="height" id="height" ng-model="windowData[0].height" value={{windowData[0].height}}>
         </div>
 
         <div>
             <label for="compass">Window Direction:</label>
-            <input type="text" name="compass" id="compass" value={{windowData[0].compass}}>
+            <input type="text" name="compass" id="compass" ng-model="windowData[0].compass" value={{windowData[0].compass}}>
         </div>
 
         <div>
             <label for="carelvl">How good are you with plants?:</label>
-            <input type="text" name="carelvl" id="carelvl" value={{windowData[0].care_lvl}}>
+            <input type="text" name="carelvl" id="carelvl" ng-model="windowData[0].care_lvl" value={{windowData[0].care_lvl}}>
         </div>
 
         <div>
             <label for="kids">Child that likes to eat houseplants?:</label>
-            <input type="text" name="kids" id="kids" value={{windowData[0].kids}}>
+            <input type="text" name="kids" id="kids" ng-model="windowData[0].kids" value={{windowData[0].kids}}>
             <label for="cats">Dogs?:</label>
-            <input type="text" name="cats" id="cats" value={{windowData[0].cats}}>
+            <input type="text" name="cats" id="cats" ng-model="windowData[0].cats" value={{windowData[0].cats}}>
             <label for="dogs">Cats?:</label>
-            <input type="text" name="dogs" id="dogs" value={{windowData[0].dogs}}>
+            <input type="text" name="dogs" id="dogs" ng-model="windowData[0].dogs" value={{windowData[0].dogs}}>
+
         </div>
 
         <input type="submit" value="Suggest Plants"/>
@@ -44,20 +48,22 @@
     </form>
 </div>
 
+<label for="plant">Plant Assigned:</label>
+<input type="text" name="plant" id="plant" ng-model="plantinventory[0]" value={{plantinventory[0]}}>
 
 <div class="buttons">
     <button>New Window</button>
-    <button>Save Window to Room</button>
+    <button ng-click="saveWindow()">Save Window to Room</button>
     <button>Delete</button>
 </div>
 
-<div id="visualwindow">
-    <h2>Window graphic here</h2>
-</div>
+<!--<div id="visualwindow">-->
+    <!--<h2>Window graphic here</h2>-->
+<!--</div>-->
 
 <div class="information">
     <div id="localplants">
-        <p>Plant Inventory for this Window: {{plantinventory}}</p>
+        <p>Plant Inventory for this Window: {{plantinventory[0]}}</p>
     </div>
     <div id="localcost">
         <p>Cost for this Window: {{windowcost}}</p>
