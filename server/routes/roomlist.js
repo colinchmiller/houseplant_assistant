@@ -9,12 +9,9 @@ router.get('/', function (req,res){
     results = [];
     console.log("Is the correct req coming in?: ", req.user);
     pg.connect(connectionString, function(err, client, done){
-        var query = client.query("SELECT * FROM windows\
-            JOIN windowsassigned ON windowsassigned.window_id = windows.id\
-            JOIN rooms ON windowsassigned.room_id = rooms.id\
+        var query = client.query("SELECT * FROM rooms\
+            JOIN users ON rooms.user_id = users.id\
             WHERE username = $1", [req.user]);
-
-        //JOIN users ON rooms.user_id = users.id
 
         query.on('row', function(row){
             results.push(row);

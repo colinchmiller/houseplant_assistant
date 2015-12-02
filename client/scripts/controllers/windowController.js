@@ -12,6 +12,7 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', function($scope
     $scope.plantsForWindow = [];
     $scope.windowData = [];
     $scope.windownames = [];
+    $scope.roomData = [];
 
 
     //////////Get Calls////////////////
@@ -24,17 +25,19 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', function($scope
         }).then(
             function (response) {
                 username = response.data;
-                $scope.getWindows();
+                $scope.getRoomData();
             });
     };
 
     //Getting the window names by user
     $scope.getWindows = function(){
+        var roomName = $scope.selectedRoom.room_name;
+        console.log("What is the room_name for selectedRoom?: ", roomName);
         $http({
             method: "GET",
             url: "/windownames",
             params: {
-                username: $scope.username
+                roomId: roomName
             }
         }).then(
             function (response) {
@@ -82,6 +85,23 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', function($scope
                 $scope.benzene += $scope.plantsForWindow[0].benzene;
                 $scope.trichloroethylene += $scope.plantsForWindow[0].trichloroethylene;
                 $scope.formaldehyde += $scope.plantsForWindow[0].formaldehyde;
+            }
+        )
+    };
+
+    $scope.getRoomData = function(){
+        $scope.roomData = [];
+        $http({
+            method: "GET",
+            url: "/roomlist",
+            params: {
+                username: $scope.username
+            }
+        }).then(
+            function(response){
+                $scope.roomData = response.data;
+                console.log("This is the roomData: ", $scope.roomData);
+                $scope.getWindows();
             }
         )
     };

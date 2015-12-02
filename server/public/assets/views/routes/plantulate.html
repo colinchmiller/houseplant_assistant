@@ -1,5 +1,8 @@
 <p>Plantulate a Room</p>
 
+<label for roomlist>Select a Room:</label>
+<select ng-options="room.room_name for room in roomData" ng-init="roomData[0]" ng-model="selectedRoom" id="roomlist"></select>
+
 <label for="windowlist">Select a Window:</label>
 <select ng-options="window.name for window in windownames" ng-model="selectedWindow" id="windowlist"></select>
 
