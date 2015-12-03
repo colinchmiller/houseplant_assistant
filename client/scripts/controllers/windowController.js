@@ -12,8 +12,33 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', function($scope
     $scope.plantsForWindow = [];
     $scope.windowData = [];
     $scope.windownames = [];
-    //$scope.roomData = [];
 
+
+    $scope.plantcheck = [{name : "Bamboo Palm", value : false}, {name : "Chinese Evergreen", value : false},
+        {name : "English Ivy", value : false}, {name: "Gerbera Daisy", value : false}, {name : "Janet Craig", value : false},
+        {name : "Marginata", value : false}, {name : "Mass Cane", value : false}, {name : "Snake Plant", value : false},
+        {name: "Peace Lily", value : false}, {name : "Pot Mum", value : false}];
+
+
+    //if the name from plant inventory matches the name from plantcheck, then the domplant
+    //needs to be set to 'true'.
+
+    //$scope.plantcheck = ['Bamboo Palm', 'Chinese Evergreen', 'English Ivy', 'Gerbera Daisy', 'Janet Craig',
+    //'Marginata', 'Mass Cane', 'Snake Plant', 'Peace Lily', 'Pot Mum'];
+
+    $scope.plantCheck = function() {
+        console.log("What is the plantinventory coming in? ", $scope.plantinventory);
+        for (var i=0; i<$scope.plantinventory.length; i++){
+            var plant = $scope.plantinventory[i];
+            for (var j=0; j<$scope.plantcheck.length; j++){
+                var confirmPlant = $scope.plantcheck[j];
+                if (plant == confirmPlant.name){
+                    confirmPlant.value = true;
+                }
+            }
+        }
+        console.log("This is the plantcheck array: ", $scope.plantcheck);
+    };
 
     //////////Get Calls////////////////
 
@@ -25,7 +50,7 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', function($scope
         }).then(
             function (response) {
                 username = response.data;
-                $scope.getWindows();;
+                $scope.getWindows();
             });
     };
 
@@ -77,12 +102,16 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', function($scope
             }
         }).then(
             function(response){
+                console.log("This is the plant response: ", response);
                 $scope.plantsForWindow = response.data;
-                $scope.plantinventory.push($scope.plantsForWindow[0].name);
-                $scope.windowcost += $scope.plantsForWindow[0].cost;
-                $scope.benzene += $scope.plantsForWindow[0].benzene;
-                $scope.trichloroethylene += $scope.plantsForWindow[0].trichloroethylene;
-                $scope.formaldehyde += $scope.plantsForWindow[0].formaldehyde;
+                for (var i=0; i<$scope.plantsForWindow.length; i++){
+                    $scope.plantinventory.push($scope.plantsForWindow[i].name);
+                    $scope.windowcost += $scope.plantsForWindow[i].cost;
+                    $scope.benzene += $scope.plantsForWindow[i].benzene;
+                    $scope.trichloroethylene += $scope.plantsForWindow[i].trichloroethylene;
+                    $scope.formaldehyde += $scope.plantsForWindow[i].formaldehyde;
+                }
+                $scope.plantCheck();
             }
         )
     };
@@ -112,7 +141,7 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', function($scope
             username: username}
         }).then(
             function(response){
-                console.log("The response from the windowassign upload: ", response);
+                //console.log("The response from the windowassign upload: ", response);
             }
         )
     };
@@ -125,7 +154,7 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', function($scope
                 plantdata: $scope.plantinventory}
         }).then(
             function(response){
-                console.log("The plant upload response: ", response);
+                //console.log("The plant upload response: ", response);
             }
         )
     };

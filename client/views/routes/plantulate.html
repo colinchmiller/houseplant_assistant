@@ -4,7 +4,7 @@
 <!--<select ng-options="room.room_name for room in roomData" ng-init="roomData[0]" ng-model="selectedRoom" id="roomlist"></select>-->
 
 <label for="windowlist">Select a Window:</label>
-<select ng-options="window.name for window in windownames" ng-model="selectedWindow" id="windowlist"></select>
+<select ng-options="window.name for window in windownames" ng-model="selectedWindow" id="windowlist" ng-change="getWindowData()"></select>
 
 <!--<label for="findwindow">Find Window by Name:</label>-->
 <!--<input type="text" name="findwindow" id="findwindow" ng-model="selectedWindow.name">-->
@@ -27,8 +27,26 @@
         </div>
 
         <div>
-            <label for="compass">Window Direction:</label>
-            <input type="text" name="compass" id="compass" ng-model="windowData[0].compass" value={{windowData[0].compass}}>
+            <label>Window Direction:</label>
+            <label>North
+                <input type="radio" ng-model="windowData[0].compass" value="North">
+            </label>
+            <label>South
+                <input type="radio" ng-model="windowData[0].compass" value="South">
+            </label>
+            <label>East
+                <input type="radio" ng-model="windowData[0].compass" value="East">
+            </label>
+            <label>West
+                <input type="radio" ng-model="windowData[0].compass" value="West">
+            </label>
+            <p>The Window Direction: {{windowData[0].compass}}</p>
+
+            <!--<select ng-model="selectedCompass.name"-->
+                    <!--ng-options="compass.name for compass in compasslist" id="compass">-->
+            <!--</select>-->
+            <!--<p>Direction Selected: {{selectedCompass.name}}</p>-->
+
         </div>
 
         <div>
@@ -38,12 +56,19 @@
 
         <div>
             <label for="kids">Child that likes to eat houseplants?:</label>
-            <input type="text" name="kids" id="kids" ng-model="windowData[0].kids" value={{windowData[0].kids}}>
+            <input type="checkbox" name="kids" id="kids" ng-model="windowData[0].kids" value={{windowData[0].kids}}>
             <label for="cats">Dogs?:</label>
-            <input type="text" name="cats" id="cats" ng-model="windowData[0].cats" value={{windowData[0].cats}}>
+            <input type="checkbox" name="cats" id="cats" ng-model="windowData[0].cats" value={{windowData[0].cats}}>
             <label for="dogs">Cats?:</label>
-            <input type="text" name="dogs" id="dogs" ng-model="windowData[0].dogs" value={{windowData[0].dogs}}>
+            <input type="checkbox" name="dogs" id="dogs" ng-model="windowData[0].dogs" value={{windowData[0].dogs}}>
 
+        </div>
+
+        <div>
+            <label for="bamboopalm">Bamboo Palm</label>
+            <input type="checkbox" name="bamboopalm" id="bamboopalm" ng-model="plantinventory[0]" value="plantinventory[0]">
+            <label for="chineseevergreen">Chinese Evergreen</label>
+            <input type="checkbox" name="chineseevergreen" id="chineseevergreen" ng-model="plantinventory[0]" value="plantinventory[0]">
         </div>
 
         <input type="submit" ng-click="suggestPlant()" value="Suggest Plants"/>
