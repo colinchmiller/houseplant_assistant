@@ -8,19 +8,17 @@ var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/ho
 
 //Serializer
 passport.serializeUser(function(user, done){
-    console.log('Serializer, what is the value of the username?', user.name);
-
     done(null, user.username);
 });
 
 //Deserializer
 passport.deserializeUser(function(id, done){
-    console.log('deserialize id is: ', id);
+    //console.log('deserialize id is: ', id);
     pg.connect(connectionString, function(err, client){
         client.query("SELECT username, password FROM users\
         WHERE username = $1", [id],
         function(err, response){
-            console.log("This is the response from the deserializeUser", response);
+            //console.log("This is the response from the deserializeUser", response);
             username = response.rows[0].username;
             client.end();
             done(null, username);

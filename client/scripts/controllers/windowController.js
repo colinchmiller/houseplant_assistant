@@ -14,6 +14,7 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', function($scope
     $scope.windownames = [];
 
 
+
     $scope.plantcheck = [{name : "Bamboo Palm", value : false}, {name : "Chinese Evergreen", value : false},
         {name : "English Ivy", value : false}, {name: "Gerbera Daisy", value : false}, {name : "Janet Craig", value : false},
         {name : "Marginata", value : false}, {name : "Mass Cane", value : false}, {name : "Snake Plant", value : false},
@@ -38,6 +39,17 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', function($scope
             }
         }
         console.log("This is the plantcheck array: ", $scope.plantcheck);
+    };
+
+    $scope.plantPrep = function() {
+        $scope.plantinventory = [];
+        console.log("This is the plantcheck data: ", $scope.plantcheck);
+        for (var i=0; i<$scope.plantcheck.length; i++){
+            if ($scope.plantcheck[i].value === true) {
+                $scope.plantinventory.push($scope.plantcheck[i].name);
+            }
+        }
+        console.log("The plantinventory to be uploaded: ", $scope.plantinventory);
     };
 
     //////////Get Calls////////////////
@@ -146,17 +158,22 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', function($scope
         )
     };
 
-    var sendPlant = function(windowId){
-        $http({
-            method: "POST",
-            url: "/windowplants",
-            data: { windowId : windowId,
-                plantdata: $scope.plantinventory}
-        }).then(
-            function(response){
-                //console.log("The plant upload response: ", response);
-            }
-        )
+    var sendPlant = function(windowId) {
+        $scope.plantPrep();
+        var plantdata = $scope.plantinventory;
+        console.log("This is the plant data variable: ", plantdata);
+        for (var i=0; i<plantdata.length; i++){
+            $http({
+                method: "POST",
+                url: "/windowplants",
+                data: { windowId : windowId,
+                    plantdata: plantdata[i]}
+            }).then(
+                function(response){
+                    //console.log("The plant upload response: ", response);
+                }
+            )
+        }
     };
 
     /////////////Plant Suggestion Logic////////////////
