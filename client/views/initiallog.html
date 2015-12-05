@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Green Skeleton</title>
+</head>
+<body ng-controller="login">
+    <div class="container">
+        <form action="/" method="post">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" ng-model="selectedUser.username">
+            </div>
+
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" ng-model="selectedUser.password">
+            </div>
+
+
+            <input ng-click="getUser()" type="submit" value="Login"/>
+            <a href="#register">Register</a>
+        </form>
+
+    </div>
+</body>
+</html>

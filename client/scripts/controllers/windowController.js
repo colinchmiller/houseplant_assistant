@@ -12,6 +12,7 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', function($scope
     $scope.plantsForWindow = [];
     $scope.windowData = [];
     $scope.windownames = [];
+    $scope.suggestedPlants = [];
 
 
 
@@ -178,16 +179,101 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', function($scope
 
     /////////////Plant Suggestion Logic////////////////
 
-    $scope.suggestPlant = function(windowData){
+    $scope.suggestPlant = function(){
         $http({
             method: "GET",
             url: "/plants"
         }).then(
             function (response) {
-                console.log("Here is the plant response: ", response);
+                console.log("Here is the plant data: ", response);
+                console.log("Here is the window data: ", $scope.windowData);
                 $scope.plants = response.data;
+                $scope.suggestionLogic();
             });
     };
+
+    $scope.suggestionLogic = function(){
+        console.log("Suggestion logic fired");
+        $scope.suggestedPlants = [];
+        for (var i=0; i<$scope.plants.length; i++){
+            var window = $scope.windowData[0];
+            var plant = $scope.plants[i];
+            var catTruth = false;
+            var dogTruth = false;
+            var kidTruth = false;
+            var careTruth = false;
+            var compassTruth = false;
+            $scope.windowLight = 0;
+            console.log("The plant being compared: ", plant.name);
+
+            //Cat comparison
+            if (window.cats == true){
+                if (plant.cats == true) {
+                    catTruth = false;
+                } else {
+                    catTruth = true;
+                }
+            } else {
+                cattTruth = true;
+            }
+            //Dog comparison
+            if (window.dogs == true){
+                if (plant.dogs == true) {
+                    dogTruth = false;
+                } else {
+                    dogTruth = true;
+                }
+            } else {
+                dogTruth = true;
+            }
+            //kid comparison
+            if (window.kids == true){
+                if (plant.kids == true) {
+                    kidTruth = false;
+                } else {
+                    kidTruth = true;
+                }
+            } else {
+                kidTruth = true;
+            }
+            console.log("The pet and kid comparisons turnout: ", catTruth, dogTruth, kidTruth);
+            //plant care lvl comparison
+            if (plant.care_lvl <= window.care_lvl){
+                careTruth = true;
+            } else {
+                careTruth = false;
+            }
+            console.log("The care level comparison: ", careTruth);
+            //window compass comparison
+            console.log("This is the window.compass: ", window.compass);
+            if(window.compass == "North"){
+                if (plant.light_lvl_min <= 3){
+                    compassTruth = true;
+                } else {
+                    compassTruth = false;
+                }
+            } else if (window.compass == "West" || window.compass == "East"){
+                if (plant.light_lvl_min < 4){
+                    compassTruth = true;
+                } else {
+                    compassTruth = false;
+                }
+            } else if (window.compass == "South"){
+                if (plant.light_lvl_min >= 1){
+                    compassTruth = true;
+                } else {
+                    compassTruth = false;
+                }
+            }
+            console.log("After the compass comparison: ", compassTruth);
+            if (catTruth == true && dogTruth == true && kidTruth == true && careTruth == true && compassTruth == true){
+                $scope.suggestedPlants.push({name: plant.name});
+            }
+
+        }
+        console.log("This is the suggested plant list: ", $scope.suggestedPlants);
+    };
+
 
     /////////////Execution on page load////////////////
 

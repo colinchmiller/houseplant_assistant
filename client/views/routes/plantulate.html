@@ -1,4 +1,3 @@
-<p>Plantulate a Room</p>
 
 <!--<label for roomlist>Select a Room:</label>-->
 <!--<select ng-options="room.room_name for room in roomData" ng-init="roomData[0]" ng-model="selectedRoom" id="roomlist"></select>-->
@@ -8,16 +7,15 @@
 
 <!--<label for="findwindow">Find Window by Name:</label>-->
 <!--<input type="text" name="findwindow" id="findwindow" ng-model="selectedWindow.name">-->
-<button ng-click="getWindowData()" class="btn btn-info">Find Now</button>
+
 
 <!--filling the window criteria from a selected window-->
 <div class="container">
-    <label>Window Criteria</label>
     <form ng-model="windowData">
         <p>{{windowData[0].name}}</p>
         <div>
             <label for="name">Window Name:</label>
-            <input type="text" name="name" id="name" ng-model="windowData[0].name" value={{windowData[0].name}}>
+            <input type="text" name="name" id="name" class="dropdown" ng-model="windowData[0].name" value={{windowData[0].name}}>
         </div>
         <div class="dimensions">
             <label for="width">Width:</label>
@@ -50,8 +48,9 @@
         </div>
 
         <div>
-            <label for="carelvl">How good are you with plants?:</label>
-            <input type="text" name="carelvl" id="carelvl" ng-model="windowData[0].care_lvl" value={{windowData[0].care_lvl}}>
+            <label>How good are you with plants?:</label>
+            <!--<div range-slider min="1" max="5" model-max="windowData[0].care_lvl" pin-handle="{{windowData[0].care_lvl}}"></div>-->
+            <input type="text" data-slider-id='carelvl' data-slidermin="0" data-slider-max="5" data-slider-step="1" ng-model="windowData[0].care_lvl"  data-slider-value={{windowData[0].care_lvl}}>
         </div>
 
         <div>
@@ -64,36 +63,67 @@
 
         </div>
 
-        <div>
-            <label for="bamboopalm">Bamboo Palm</label>
-            <input type="checkbox" name="bamboopalm" id="bamboopalm" ng-model="plantcheck[0].value" value="plantcheck[0].value">
-            <label for="chineseevergreen">Chinese Evergreen</label>
-            <input type="checkbox" name="chineseevergreen" id="chineseevergreen" ng-model="plantinventory[1].value" value="plantinventory[1].value">
-            <label for="englishivy">English Ivy</label>
-            <input type="checkbox" name="englishivy" id="englishivy" ng-model="plantcheck[2].value" value="plantcheck[2].value">
-            <label for="gerberadaisy">Gerbera Daisy</label>
-            <input type="checkbox" name="gerberadaisy" id="gerberadaisy" ng-model="plantcheck[3].value" value="plantcheck[3].value">
-            <label for="janetcraig">Janet Craig</label>
-            <input type="checkbox" name="janetcraig" id="janetcraig" ng-model="plantcheck[4].value" value="plantcheck[4].value">
-            <label for="marginata">Marginata</label>
-            <input type="checkbox" name="marginata" id="marginata" ng-model="plantcheck[5].value" value="plantcheck[5].value">
-            <label for="masscane">Mass Cane</label>
-            <input type="checkbox" name="masscane" id="masscane" ng-model="plantcheck[6].value" value="plantcheck[6].value">
-            <label for="snakeplant">Snake Plant</label>
-            <input type="checkbox" name="snakeplant" id="snakeplant" ng-model="plantcheck[7].value" value="plantcheck[7].value">
-            <label for="peacelily">Peace Lily</label>
-            <input type="checkbox" name="peacelily" id="peacelily" ng-model="plantcheck[8].value" value="plantcheck[8].value">
-            <label for="potmum">Pot Mum</label>
-            <input type="checkbox" name="potmum" id="potmum" ng-model="plantcheck[9].value" value="plantcheck[9].value">
-        </div>
+        <div class="row">
+        <div class="list-group col-md-12">
+            <div class="list-group-item col-md-3">
+                <label for="bamboopalm">Bamboo Palm</label>
+                <input type="checkbox" name="bamboopalm" id="bamboopalm" ng-model="plantcheck[0].value" value="plantcheck[0].value">
+            </div>
 
-        <input type="submit" ng-click="suggestPlant()" value="Suggest Plants"/>
+            <div class="list-group-item col-md-3 col-md-offset-6 col-md-pull-6">
+                <label for="chineseevergreen">Chinese Evergreen</label>
+                <input type="checkbox" name="chineseevergreen" id="chineseevergreen" ng-model="plantinventory[1].value" value="plantinventory[1].value">
+            </div>
+
+            <div class="list-group-item col-md-3">
+                <label for="englishivy">English Ivy</label>
+                <input type="checkbox" name="englishivy" id="englishivy" ng-model="plantcheck[2].value" value="plantcheck[2].value">
+            </div>
+
+            <div class="list-group-item col-md-3 col-md-offset-6 col-md-pull-6">
+                <label for="gerberadaisy">Gerbera Daisy</label>
+                <input type="checkbox" name="gerberadaisy" id="gerberadaisy" ng-model="plantcheck[3].value" value="plantcheck[3].value">
+            </div>
+
+            <div class="list-group-item col-md-3">
+                <label for="janetcraig">Janet Craig</label>
+                <input type="checkbox" name="janetcraig" id="janetcraig" ng-model="plantcheck[4].value" value="plantcheck[4].value">
+            </div>
+
+            <div class="list-group-item col-md-3 col-md-offset-6 col-md-pull-6">
+                <label for="marginata">Marginata</label>
+                <input type="checkbox" name="marginata" id="marginata" ng-model="plantcheck[5].value" value="plantcheck[5].value">
+            </div>
+
+            <div class="list-group-item col-md-3">
+                <label for="masscane">Mass Cane</label>
+                <input type="checkbox" name="masscane" id="masscane" ng-model="plantcheck[6].value" value="plantcheck[6].value">
+            </div>
+
+            <div class="list-group-item col-md-3 col-md-offset-6 col-md-pull-6">
+                <label for="snakeplant">Snake Plant</label>
+                <input type="checkbox" name="snakeplant" id="snakeplant" ng-model="plantcheck[7].value" value="plantcheck[7].value">
+            </div>
+
+            <div class="list-group-item col-md-3">
+                <label for="peacelily">Peace Lily</label>
+                <input type="checkbox" name="peacelily" id="peacelily" ng-model="plantcheck[8].value" value="plantcheck[8].value">
+            </div>
+
+            <div class="list-group-item col-md-3">
+                <label for="potmum">Pot Mum</label>
+                <input type="checkbox" name="potmum" id="potmum" ng-model="plantcheck[9].value" value="plantcheck[9].value">
+            </div>
+        </div>
+        </div>
 
     </form>
 </div>
 
-<label for="plant">Plant Assigned:</label>
-<input type="text" name="plant" id="plant" ng-model="plantinventory[0]" value={{plantinventory[0]}}>
+<input type="submit" ng-click="suggestPlant()" value="Suggest Plants"/>
+<div ng-repeat = "plant in suggestedPlants">
+    <p>{{plant.name}}</p>
+</div>
 
 <div class="buttons">
     <button>New Window</button>
@@ -110,14 +140,14 @@
         <p>Plant Inventory for this Window: {{plantinventory[0]}}</p>
     </div>
     <div id="localcost">
-        <p>Cost for this Window: {{windowcost}}</p>
+        <p>Cost for this Window: {{windowcost | currency: '$'}}</p>
     </div>
     <div id="localchemicals">
         <p>Chemicals Removed for this Window:</p>
             <ul>
-                <li>Benzene: {{benzene}}</li>
-                <li>Trichloroethylene: {{trichloroethylene}}</li>
-                <li>Formaldehyde: {{formaldehyde}}</li>
+                <li>Benzene: {{benzene}} Micrograms over 24 hours</li>
+                <li>Trichloroethylene: {{trichloroethylene}} Micrograms over 24 hours</li>
+                <li>Formaldehyde: {{formaldehyde}} Micrograms over 24 hours</li>
             </ul>
     </div>
 

@@ -3,6 +3,32 @@ img {
     float: left;
 }
 
-/*.leaf > p{*/
-    /*display: inline-block;*/
-/*}*/
+h1{
+    color: #9FA66A;
+}
+
+body {
+    background-color: #9FA66A;
+}
+
+#headtrip {
+    background-color: #595407;
+}
+
+.nav > li >  a{
+    color: #363B16;
+    background-color: #D2DB8C;
+}
+
+.information {
+    float: right;
+}
+
+.page-header {
+    border-bottom: 1px solid #9FA66A;
+}
+
+.login {
+    color: #363B16;
+}
+
