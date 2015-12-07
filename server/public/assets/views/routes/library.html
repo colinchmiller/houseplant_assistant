@@ -1,11 +1,14 @@
-<p>Plant Library</p>
+<h3>Plant Library</h3>
 
-<div class="well" ng-repeat="plant in plants">
+<div class="well plants" ng-repeat="plant in plants">
     <div class="leaf">
         <img ng-src="{{plant.image_url}}">
         <p>{{plant.name}}</p>
         <p>Benzene removal: {{plant.benzene}}</p>
         <p>Formaldehyde removal: {{plant.formaldehyde}}</p>
         <p>Trichloroethylene removal: {{plant.trichloroethylene}}</p>
+    </div>
+    <div id="plantdescription">
+        <p>Description: {{plant.plant_description}}</p>
     </div>
 </div>

@@ -1,10 +1,10 @@
 
 <!--<label for roomlist>Select a Room:</label>-->
 <!--<select ng-options="room.room_name for room in roomData" ng-init="roomData[0]" ng-model="selectedRoom" id="roomlist"></select>-->
-
-<label for="windowlist">Select a Window:</label>
-<select ng-options="window.name for window in windownames" ng-model="selectedWindow" id="windowlist" ng-change="getWindowData()"></select>
-
+<div class="container windowselector">
+    <label for="windowlist">Select a Window:</label>
+    <select ng-options="window.name for window in windownames" ng-model="selectedWindow" id="windowlist" ng-change="getWindowData()"></select>
+</div>
 <!--<label for="findwindow">Find Window by Name:</label>-->
 <!--<input type="text" name="findwindow" id="findwindow" ng-model="selectedWindow.name">-->
 
@@ -12,7 +12,7 @@
 <!--filling the window criteria from a selected window-->
 <div class="container">
     <form ng-model="windowData">
-        <p>{{windowData[0].name}}</p>
+        <h3>{{windowData[0].name}}</h3>
         <div>
             <label for="name">Window Name:</label>
             <input type="text" name="name" id="name" class="dropdown" ng-model="windowData[0].name" value={{windowData[0].name}}>
@@ -38,7 +38,7 @@
             <label>West
                 <input type="radio" ng-model="windowData[0].compass" value="West">
             </label>
-            <p>The Window Direction: {{windowData[0].compass}}</p>
+            <!--<p>The Window Direction: {{windowData[0].compass}}</p>-->
 
             <!--<select ng-model="selectedCompass.name"-->
                     <!--ng-options="compass.name for compass in compasslist" id="compass">-->
@@ -116,34 +116,37 @@
             </div>
         </div>
         </div>
-
+        <input type="submit" ng-click="saveWindow()" value="Save Window"/>
     </form>
 </div>
 
-<input type="submit" ng-click="suggestPlant()" value="Suggest Plants"/>
-<div ng-repeat = "plant in suggestedPlants">
-    <p>{{plant.name}}</p>
+<div class="container">
+    <input type="submit" ng-click="suggestPlant()" value="Suggest Plants"/>
 </div>
 
-<div class="buttons">
-    <button>New Window</button>
-    <button ng-click="saveWindow()">Save Window to Room</button>
-    <button>Delete</button>
+<div class="container" ng-repeat = "plant in suggestedPlants">
+    <h4>{{plant.name}}</h4>
 </div>
+
+<!--<div class="buttons">-->
+    <!--<button>New Window</button>-->
+
+    <!--<button>Delete</button>-->
+<!--</div>-->
 
 <!--<div id="visualwindow">-->
     <!--<h2>Window graphic here</h2>-->
 <!--</div>-->
 
-<div class="information">
+<div class="information container">
     <div id="localplants">
-        <p>Plant Inventory for this Window: {{plantinventory[0]}}</p>
+        <h4>Plant Inventory for this Window: {{plantinventory[0]}}</h4>
     </div>
     <div id="localcost">
-        <p>Cost for this Window: {{windowcost | currency: '$'}}</p>
+        <h4>Cost for this Window: {{windowcost | currency: '$'}}</h4>
     </div>
     <div id="localchemicals">
-        <p>Chemicals Removed for this Window:</p>
+        <h4>Chemicals Removed for this Window:</h4>
             <ul>
                 <li>Benzene: {{benzene}} Micrograms over 24 hours</li>
                 <li>Trichloroethylene: {{trichloroethylene}} Micrograms over 24 hours</li>

@@ -1,14 +1,31 @@
 img {
     height: 150px;
     float: left;
+    margin-right: 10px;
 }
 
 h1{
     color: #9FA66A;
 }
 
+h3, p, label, a {
+    color: #363B16;
+}
+
 body {
     background-color: #9FA66A;
+}
+
+select {
+    background-color: #D2DB8C;
+}
+
+input {
+    background-color: #D2DB8C;
+}
+
+label{
+    margin-right: 3px;
 }
 
 #headtrip {
@@ -20,8 +37,18 @@ body {
     background-color: #D2DB8C;
 }
 
-.information {
-    float: right;
+.nav {
+    margin: 5px;
+}
+
+.list-group-item {
+    background-color: #D2DB8C;
+    border: 1px solid #363B16;
+}
+
+
+.information h4, li {
+    color: #363B16;
 }
 
 .page-header {
@@ -32,3 +59,12 @@ body {
     color: #363B16;
 }
 
+.windowselector {
+    margin: 5px;
+}
+
+.plants {
+    background-color: #D2DB8C;
+    height: 200px;
+    border: 1px solid #363B16;
+}
