@@ -214,7 +214,7 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', function($scope
                     catTruth = true;
                 }
             } else {
-                cattTruth = true;
+                catTruth = true;
             }
             //Dog comparison
             if (window.dogs == true){
