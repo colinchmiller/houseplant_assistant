@@ -1,64 +1,25 @@
-
-h1{
-    color: #c6c6c6;
-}
-
-h3, p, label, a {
-    color: #363B16;
-}
-
+/******
+GLOBAL
+******/
 body {
     background-color: #9FA66A;
 }
-
-select {
-    background-color: #D2DB8C;
-}
-
 input {
-    background-color: #D2DB8C;
+    background-color: #c6c6c6;
 }
-
-label{
-    margin-right: 3px;
+/******
+TEXT
+******/
+h1{
+  color: #c6c6c6;
+  font-size: 100px;
 }
-
-.nav > li >  a{
+h2 {
+  color: #c6c6c6;
+  font-size: 50px;
+}
+h3, p, label, a {
     color: #363B16;
-    background-color: #D2DB8C;
-}
-
-.nav {
-    margin: 5px;
-}
-
-.list-group-item {
-    background-color: #D2DB8C;
-    border: 1px solid #363B16;
-}
-
-
-.information h4, li {
-    color: #363B16;
-}
-
-.page-header {
-    background-color: #595407;
-    padding: 20px;
-}
-
-.login {
-    color: #363B16;
-}
-
-.windowselector {
-    margin: 5px;
-}
-
-.plants {
-    background-color: #D2DB8C;
-    height: 200px;
-    border: 1px solid #363B16;
 }
 /*******
 IMAGES
@@ -68,4 +29,38 @@ img {
     width: 150px;
     float: left;
     margin-right: 10px;
+}
+/********
+HEADER
+********/
+.page-header {
+    background-color: #595407;
+    padding: 75px 20px;
+    /*******
+    countering bootstrap
+    *******/
+    margin: 0;
+    border: none;
+}
+/*********
+NAVIGATION
+*********/
+.nav > li >  a{
+    color: #363B16;
+    background-color: #D2DB8C;
+}
+/**********
+PLANT SELECTOR
+***********/
+.list-group-item {
+    background-color: #D2DB8C;
+    border: 1px solid #363B16;
+}
+/*********
+PLANT LIBRARY
+*********/
+.plants {
+    background-color: #D2DB8C;
+    height: 200px;
+    border: 1px solid #363B16;
 }

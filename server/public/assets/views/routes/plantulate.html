@@ -1,22 +1,14 @@
-
-<!--<label for roomlist>Select a Room:</label>-->
-<!--<select ng-options="room.room_name for room in roomData" ng-init="roomData[0]" ng-model="selectedRoom" id="roomlist"></select>-->
-<div class="container windowselector">
-    <label for="windowlist">Select a Window:</label>
-    <select ng-options="window.name for window in windownames" ng-model="selectedWindow" id="windowlist" ng-change="getWindowData()"></select>
+<!--********
+INTRODUCTION
+*********-->
+<div class="container">
+  <h2>Welcome</h2>
 </div>
-<!--<label for="findwindow">Find Window by Name:</label>-->
-<!--<input type="text" name="findwindow" id="findwindow" ng-model="selectedWindow.name">-->
 
 
 <!--filling the window criteria from a selected window-->
 <div class="container">
     <form ng-model="windowData">
-        <h3>{{windowData[0].name}}</h3>
-        <div>
-            <label for="name">Window Name:</label>
-            <input type="text" name="name" id="name" class="dropdown" ng-model="windowData[0].name" value={{windowData[0].name}}>
-        </div>
         <div class="dimensions">
             <label for="width">Width:</label>
             <input type="text" name="width" id="width" ng-model="windowData[0].width" value={{windowData[0].width}}>
@@ -128,20 +120,10 @@
     <h4>{{plant.name}}</h4>
 </div>
 
-<!--<div class="buttons">-->
-    <!--<button>New Window</button>-->
-
-    <!--<button>Delete</button>-->
-<!--</div>-->
-
-<!--<div id="visualwindow">-->
-    <!--<h2>Window graphic here</h2>-->
-<!--</div>-->
-
-<div class="information container">
+<div class="container">
     <div id="localplants">
         <h4>Plant Inventory for this Window: {{plantinventory[0]}}</h4>
-    </div>
+    </div
     <div id="localcost">
         <h4>Cost for this Window: {{windowcost | currency: '$'}}</h4>
     </div>
