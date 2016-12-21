@@ -1,11 +1,6 @@
-img {
-    height: 150px;
-    float: left;
-    margin-right: 10px;
-}
 
 h1{
-    color: #9FA66A;
+    color: #c6c6c6;
 }
 
 h3, p, label, a {
@@ -28,10 +23,6 @@ label{
     margin-right: 3px;
 }
 
-#headtrip {
-    background-color: #595407;
-}
-
 .nav > li >  a{
     color: #363B16;
     background-color: #D2DB8C;
@@ -52,7 +43,8 @@ label{
 }
 
 .page-header {
-    border-bottom: 1px solid #9FA66A;
+    background-color: #595407;
+    padding: 20px;
 }
 
 .login {
@@ -67,4 +59,13 @@ label{
     background-color: #D2DB8C;
     height: 200px;
     border: 1px solid #363B16;
+}
+/*******
+IMAGES
+********/
+img {
+    height: 150px;
+    width: 150px;
+    float: left;
+    margin-right: 10px;
 }
