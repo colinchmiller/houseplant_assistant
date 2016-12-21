@@ -1,5 +1,5 @@
 /*****************
- Routing landing page for pre-login in authentication
+ Page Routing
  *****************/
 var express = require('express');
 var router = express.Router();
