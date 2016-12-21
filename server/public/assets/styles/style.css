@@ -5,21 +5,21 @@ body {
     background-color: #9FA66A;
 }
 input {
-    background-color: #c6c6c6;
+    background-color: #eee;
 }
 /******
 TEXT
 ******/
 h1{
-  color: #c6c6c6;
+  color: #eee;
   font-size: 100px;
 }
 h2 {
-  color: #c6c6c6;
+  color: #eee;
   font-size: 75px;
 }
 h3 {
-  color: #c6c6c6;
+  color: #eee;
   font-size: 50px;
 }
 p, label, a {
