@@ -16,10 +16,14 @@ h1{
 }
 h2 {
   color: #c6c6c6;
+  font-size: 75px;
+}
+h3 {
+  color: #c6c6c6;
   font-size: 50px;
 }
-h3, p, label, a {
-    color: #363B16;
+p, label, a {
+  color: #363B16;
 }
 /*******
 IMAGES
@@ -31,16 +35,19 @@ img {
     margin-right: 10px;
 }
 /********
-HEADER
+HEADERS
 ********/
 .page-header {
     background-color: #595407;
-    padding: 75px 20px;
+    padding: 75px;
     /*******
     countering bootstrap
     *******/
     margin: 0;
     border: none;
+}
+.header {
+  padding: 50px 0px;
 }
 /*********
 NAVIGATION
@@ -49,12 +56,31 @@ NAVIGATION
     color: #363B16;
     background-color: #D2DB8C;
 }
+.affix {
+  top: 0;
+  width: 100%;
+}
+
+.affix-top {
+  width: 100%;
+}
+
+.affix-bottom {
+  position: absolute;
+  width: 100%;
+}
 /**********
 PLANT SELECTOR
 ***********/
 .list-group-item {
     background-color: #D2DB8C;
     border: 1px solid #363B16;
+}
+/********
+TEXT BLOCKS
+*********/
+.text-block {
+  border-top: 1px solid #595407;
 }
 /*********
 PLANT LIBRARY
