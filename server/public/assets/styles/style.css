@@ -22,8 +22,13 @@ h3 {
   color: #eee;
   font-size: 50px;
 }
-p, label, a {
+p, label, a, li {
   color: #363B16;
+  font-weight: 600;
+  font-size: 15px;
+}
+p {
+  line-height: 1.5;
 }
 /*******
 IMAGES
@@ -77,10 +82,11 @@ PLANT SELECTOR
     border: 1px solid #363B16;
 }
 /********
-TEXT BLOCKS
+TEXT BLOCK
 *********/
 .text-block {
   border-top: 1px solid #595407;
+  padding-top: 25px;
 }
 /*********
 PLANT LIBRARY
