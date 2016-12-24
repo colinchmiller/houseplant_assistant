@@ -96,3 +96,13 @@ PLANT LIBRARY
     height: 200px;
     border: 1px solid #363B16;
 }
+/*********
+PLANTULATE
+*********/
+.container {
+  width: 100%;
+  background-color: #9FA66A;
+}
+.container:nth-child(even) {
+  background-color: #595407;
+}
