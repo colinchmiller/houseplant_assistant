@@ -1,6 +1,6 @@
 var username;
 
-myApp.controller('WindowCriteriaController', ['$scope', '$http', function($scope, $http){
+myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$anchorScroll', function($scope, $http, $location, $anchorScroll){
     console.log('WindowCriteriaController is now running');
 
     /////////////variables for presenting data on DOM//////////////
@@ -27,6 +27,11 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', function($scope
 
     //$scope.plantcheck = ['Bamboo Palm', 'Chinese Evergreen', 'English Ivy', 'Gerbera Daisy', 'Janet Craig',
     //'Marginata', 'Mass Cane', 'Snake Plant', 'Peace Lily', 'Pot Mum'];
+
+    $scope.scrollTo = function(id) {
+      $location.hash(id);
+      $anchorscroll();
+    }
 
     $scope.plantCheck = function() {
         console.log("What is the plantinventory coming in? ", $scope.plantinventory);
@@ -280,4 +285,3 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', function($scope
     $scope.getUser();
 
 }]);
-
