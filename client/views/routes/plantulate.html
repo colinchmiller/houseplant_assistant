@@ -4,9 +4,6 @@ INTRODUCTION
 <div class="container">
   <div class="row">
     <h2 class="header">Welcome</h2>
-    <!-- ***************
-    TEMPORARY LOREM IPSUM
-    ******************-->
     <p class="text-block">Welcome to Green Skeleton Houseplant Assistant! On this site, I hope
       educate you on the benefits of houseplants and encourage you to realize that, no matter
       your skill level, there is a plant available for you to be able to grow in your home. But before
@@ -22,9 +19,6 @@ NASA EXPERIMENT
 <div class="container" id="nasa">
   <div class="row">
     <h2 class="header">NASA</h2>
-    <!-- ***************
-    TEMPORARY LOREM IPSUM
-    ******************-->
     <p class="text-block">In 1989, NASA conducted and published a study on the ability of common
       houseplants to remove harmful toxins from the air. The chemicals that NASA focused on were:
     </p>
@@ -170,71 +164,6 @@ TOXICITY
   </div>
 </div>
 
-
-
-
-
-<!--filling the window criteria from a selected window-->
-<div class="container">
-    <form ng-model="windowData">
-
-        <div class="row">
-        <div class="list-group col-md-12">
-            <div class="list-group-item col-md-3">
-                <label for="bamboopalm">Bamboo Palm</label>
-                <input type="checkbox" name="bamboopalm" id="bamboopalm" ng-model="plantcheck[0].value" value="plantcheck[0].value">
-            </div>
-
-            <div class="list-group-item col-md-3 col-md-offset-6 col-md-pull-6">
-                <label for="chineseevergreen">Chinese Evergreen</label>
-                <input type="checkbox" name="chineseevergreen" id="chineseevergreen" ng-model="plantinventory[1].value" value="plantinventory[1].value">
-            </div>
-
-            <div class="list-group-item col-md-3">
-                <label for="englishivy">English Ivy</label>
-                <input type="checkbox" name="englishivy" id="englishivy" ng-model="plantcheck[2].value" value="plantcheck[2].value">
-            </div>
-
-            <div class="list-group-item col-md-3 col-md-offset-6 col-md-pull-6">
-                <label for="gerberadaisy">Gerbera Daisy</label>
-                <input type="checkbox" name="gerberadaisy" id="gerberadaisy" ng-model="plantcheck[3].value" value="plantcheck[3].value">
-            </div>
-
-            <div class="list-group-item col-md-3">
-                <label for="janetcraig">Janet Craig</label>
-                <input type="checkbox" name="janetcraig" id="janetcraig" ng-model="plantcheck[4].value" value="plantcheck[4].value">
-            </div>
-
-            <div class="list-group-item col-md-3 col-md-offset-6 col-md-pull-6">
-                <label for="marginata">Marginata</label>
-                <input type="checkbox" name="marginata" id="marginata" ng-model="plantcheck[5].value" value="plantcheck[5].value">
-            </div>
-
-            <div class="list-group-item col-md-3">
-                <label for="masscane">Mass Cane</label>
-                <input type="checkbox" name="masscane" id="masscane" ng-model="plantcheck[6].value" value="plantcheck[6].value">
-            </div>
-
-            <div class="list-group-item col-md-3 col-md-offset-6 col-md-pull-6">
-                <label for="snakeplant">Snake Plant</label>
-                <input type="checkbox" name="snakeplant" id="snakeplant" ng-model="plantcheck[7].value" value="plantcheck[7].value">
-            </div>
-
-            <div class="list-group-item col-md-3">
-                <label for="peacelily">Peace Lily</label>
-                <input type="checkbox" name="peacelily" id="peacelily" ng-model="plantcheck[8].value" value="plantcheck[8].value">
-            </div>
-
-            <div class="list-group-item col-md-3">
-                <label for="potmum">Pot Mum</label>
-                <input type="checkbox" name="potmum" id="potmum" ng-model="plantcheck[9].value" value="plantcheck[9].value">
-            </div>
-        </div>
-        </div>
-        <input type="submit" ng-click="saveWindow()" value="Save Window"/>
-    </form>
-</div>
-
 <div class="container">
     <input type="submit" ng-click="suggestPlant()" value="Suggest Plants"/>
 </div>
@@ -243,7 +172,7 @@ TOXICITY
     <h4>{{plant.name}}</h4>
 </div>
 
-<div class="container">
+<!-- <div class="container">
     <div id="localplants">
         <h4>Plant Inventory for this Window: {{plantinventory[0]}}</h4>
     </div>
@@ -256,4 +185,4 @@ TOXICITY
             </ul>
     </div>
 
-</div>
+</div> -->
