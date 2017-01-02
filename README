@@ -4,6 +4,8 @@ To do: Remove unnecessary database connections
 To do: Create plant logos for the site logo as well as plant representations for selection and
        animation.
 To do: Chase down the error that is appearing in the console on the browser
+To do: Add icons for plants and molecules in NASA section
+To do: Add animation for houseplants section
 
 Problem: Can't get bootstrap css affix to stick the nav to the top of the screen when you scroll down
 
