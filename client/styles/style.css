@@ -97,17 +97,22 @@ PLANT LIBRARY
     border: 1px solid #363B16;
 }
 /*********
-PLANTULATE ALTERNATE STYLING
+PLANTULATE PAGE ALTERNATE STYLING
 *********/
 .container {
   width: 100%;
   background-color: #9FA66A;
   padding: 50px;
 }
+.container h2 {
+  color: #363B16;
+}
 .container:nth-child(even) {
   background-color: #595407;
 }
-.container:nth-child(even) p {
+.container:nth-child(even) p,
+.container:nth-child(even) a,
+.container:nth-child(even) h2 {
   color: #ccc;
 }
 .container:nth-child(even) .text-block {
