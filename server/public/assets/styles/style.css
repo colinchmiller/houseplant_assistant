@@ -7,6 +7,14 @@ body {
 input {
     background-color: #eee;
 }
+.grouping:before,
+.grouping:after {
+  content: " ";
+  display: table;
+}
+.grouping:after {
+  clear: both;
+}
 /******
 TEXT
 ******/
@@ -21,6 +29,10 @@ h2 {
 h3 {
   color: #eee;
   font-size: 50px;
+}
+h4 {
+  color: #eee;
+  font-size: 25px;
 }
 p, label, a, li {
   color: #363B16;
@@ -117,4 +129,13 @@ PLANTULATE PAGE ALTERNATE STYLING
 }
 .container:nth-child(even) .text-block {
   border-top: 1px solid #ccc;
+}
+/*******
+COLUMN
+*******/
+.column {
+  float: left;
+  width: 30%;
+  margin-left: 15px;
+  padding: 15px;
 }
