@@ -83,7 +83,8 @@ WHAT MAKES A PLANT A GOOD HOUSEPLANT
     <h2 class="header">Houseplants</h2>
     <p class="text-block">There are several criteria that make for a good houseplant. The interior of a person's home,
     particularly in homes in areas with a distinct winter season, can be difficult for a houseplant
-    to survive in. </p>
+    to survive in. Let's look at some of the factors that can affect a plant's success and see if we can
+    find the best houseplant to clean the air and fit your needs.</p>
     <a ng-click="scrollTo('light')">Light</a>
   </div>
 </div>
@@ -103,24 +104,20 @@ Light
       <label>Window Direction:</label>
       <ul>
         <li>
-          <label>North
-              <input type="radio" ng-model="windowData[0].compass" value="North">
-          </label>
+          <label>North</label>
+          <input type="radio" ng-model="windowData[0].compass" value="North">
         </li>
         <li>
-          <label>South
-              <input type="radio" ng-model="windowData[0].compass" value="South">
-          </label>
+          <label>South</label>
+          <input type="radio" ng-model="windowData[0].compass" value="South">
         </li>
         <li>
-          <label>East
-              <input type="radio" ng-model="windowData[0].compass" value="East">
-          </label>
+          <label>East</label>
+          <input type="radio" ng-model="windowData[0].compass" value="East">
         </li>
         <li>
-          <label>West
-              <input type="radio" ng-model="windowData[0].compass" value="West">
-          </label>
+          <label>West</label>
+          <input type="radio" ng-model="windowData[0].compass" value="West">
         </li>
       </ul>
         <p>The Window Direction: {{windowData[0].compass}}</p>
@@ -137,13 +134,16 @@ SPACE REQUIREMENTS
     <h2 class="header">Space Needs</h2>
     <p class="text-block">Plants need to be able to survive in small spaces indoors to survive.
     This includes limited pot space, which restricts root growth and can lead to nutrient depletion.</p>
+    <p>Let's see how much space you've got available for your houseplant.</p>
     <div class="dimensions" ng-model="windowData">
-        <label for="width">Width:</label>
-        <input type="text" name="width" id="width" ng-model="windowData[0].width" value={{windowData[0].width}}>
-        <label for="height">Height:</label>
-        <input type="text" name="height" id="height" ng-model="windowData[0].height" value={{windowData[0].height}}>
-        <a ng-click="scrollTo('water')">WATER</a>
+      <p>First off, about how wide is the space that you have for your plant?</p>
+      <label for="width">Width in inches:</label>
+      <input type="text" name="width" id="width" ng-model="windowData[0].width" value={{windowData[0].width}}>
+      <p>Next, how much height do you have available?</p>
+      <label for="height">Height:</label>
+      <input type="text" name="height" id="height" ng-model="windowData[0].height" value={{windowData[0].height}}>
     </div>
+    <a ng-click="scrollTo('water')">WATER</a>
   </div>
 </div>
 
@@ -159,7 +159,7 @@ WATER
         <label>How good are you with plants? Please type in a number from 1-5, 1 being poorest and 5 best</label>
         <div range-slider min="1" max="5" model-max="windowData[0].care_lvl" pin-handle="{{windowData[0].care_lvl}}"></div>
         <input type="text" data-slider-id='carelvl' data-slidermin="0" data-slider-max="5" data-slider-step="1" ng-model="windowData[0].care_lvl"  data-slider-value={{windowData[0].care_lvl}}>
-        <a ng-click="scrollTo('toxicity')">toxiciTYY!!!!Y!Y!Y!</a>
+        <a ng-click="scrollTo('toxicity')">toxicity icon</a>
     </div>
   </div>
 </div>
