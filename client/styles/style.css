@@ -51,8 +51,9 @@ img {
     float: left;
     margin-right: 10px;
 }
-img {
+.molecule {
   background-color: #595407;
+  float: none;
 }
 /********
 HEADERS
@@ -127,7 +128,8 @@ PLANTULATE PAGE ALTERNATE STYLING
 }
 .container:nth-child(even) p,
 .container:nth-child(even) a,
-.container:nth-child(even) h2 {
+.container:nth-child(even) h2,
+.container:nth-child(even) label {
   color: #ccc;
 }
 .container:nth-child(even) .text-block {
@@ -141,4 +143,7 @@ COLUMN
   width: 30%;
   margin-left: 15px;
   padding: 15px;
+}
+.plant-list {
+  background-color: #ccc;
 }

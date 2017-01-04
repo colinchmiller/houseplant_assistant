@@ -25,7 +25,7 @@ NASA EXPERIMENT
     <div class="grouping">
       <div class="column">
         <h4>Benzene</h4>
-        <img src="./vendors/images/Benzene Molecule.jpg">
+        <img class="molecule" src="./vendors/images/Benzene Molecule.jpg">
         <p>Benzene is a natural constituent of crude oil and is one of the most common industrial
         chemicals in use, usually used as an intermediate to make other chemicals, most of which
         are used mainly in plastics and synthetic fibers. As a result, it it present at low levels
@@ -34,41 +34,41 @@ NASA EXPERIMENT
         damage and can cause leukemia in sufficient levels. OSHA recommends a maximum exposure limit of
         0.1 ppm over 8 hours.</p>
         <img src="" ng-mouseenter="benzene=true" ng-mouseleave="benzene=false">
-        <ul ng-show="benzene">
-          <li>Gerbera Daisy</li>
-          <li>Pot Mum</li>
-          <li>Peace Lily</li>
-        </ul>
+        <div ng-show="benzene" class="plant-list">
+          <h5>Gerbera Daisy</h5>
+          <h5>Pot Mum</h5>
+          <h5>Peace Lily</h5>
+        </div>
       </div>
       <div class="column">
         <h4>Trichloroethylene</h4>
-        <img>Molecule</img>
+        <img src="">
         <p>Trichloroethylene is typically used as an industrial solvent and in refrigerant manufacture,
            and was historically used as an anesthetic. It affects primarily the central nervous
           system, although it can also affect the liver and kidneys, causing intoxication similar to that
           of alcohol. SCOEL lists the maximum exposure limit of 10 ppm over 8 hours, or 30 ppm for a short
            term limit (15 minutes).</p>
         <img src="" ng-mouseenter="trichlor=true" ng-mouseleave="trichlor=false">
-        <ul ng-show="trichlor">
-          <li>Marginata</li>
-          <li>Gerbera Daisy</li>
-          <li>Mass Cane</li>
-        </ul>
+        <div ng-show="trichlor" class="plant-list">
+          <h5>Marginata</h5>
+          <h5>Gerbera Daisy</h5>
+          <h5>Mass Cane</h5>
+        </div>
       </div>
       <div class="column">
         <h4>Formaldehyde</h4>
-        <img>Molecule</img>
+        <img src="">
         <p>Formaldehyde is a naturally occurring organic compound that is commonly used as a precurosr
           in industrial resins and coatings. It is also created by forest fires, automobile exhaust,
           and tobacco smoke, thus occurring wherever there is smog. It is toxic to all animals, causing
           eye and nasal irritation and is a known carcinogen. The maximum recommended concentration level
           is listed at 0.3 ppm.</p>
         <img src="" ng-mouseenter="formald=true" ng-mouseleave="formald=false">
-        <ul ng-show="formald">
-          <li>Bamboo Palm</li>
-          <li>Mass Cane</li>
-          <li>Snake Plant</li>
-        </ul>
+        <div ng-show="formald" class="plant-list">
+          <h5>Bamboo Palm</h5>
+          <h5>Mass Cane</h5>
+          <h5>Snake Plant</h5>
+        </div>
         <a ng-click="scrollTo('houseplant')">Houseplants Overview</a>
       </div>
     </div>
@@ -96,20 +96,33 @@ Light
     <h2 class="header">Light</h2>
     <p class="text-block">Many plants have difficulty indoors due to low lighting. As a result, many indoor
     plants are tropical understory plants, which are used to lower light levels.</p>
+    <p>When picking a plant for your home, it cna be easiest to start by going off which way your
+    window faces on a compass bearing. North generally gets the least, and south the most (at least, in north
+    America that is).</p>
     <div>
-        <label>Window Direction:</label>
-        <label>North
-            <input type="radio" ng-model="windowData[0].compass" value="North">
-        </label>
-        <label>South
-            <input type="radio" ng-model="windowData[0].compass" value="South">
-        </label>
-        <label>East
-            <input type="radio" ng-model="windowData[0].compass" value="East">
-        </label>
-        <label>West
-            <input type="radio" ng-model="windowData[0].compass" value="West">
-        </label>
+      <label>Window Direction:</label>
+      <ul>
+        <li>
+          <label>North
+              <input type="radio" ng-model="windowData[0].compass" value="North">
+          </label>
+        </li>
+        <li>
+          <label>South
+              <input type="radio" ng-model="windowData[0].compass" value="South">
+          </label>
+        </li>
+        <li>
+          <label>East
+              <input type="radio" ng-model="windowData[0].compass" value="East">
+          </label>
+        </li>
+        <li>
+          <label>West
+              <input type="radio" ng-model="windowData[0].compass" value="West">
+          </label>
+        </li>
+      </ul>
         <p>The Window Direction: {{windowData[0].compass}}</p>
         <a ng-click="scrollTo('space')">Space Requirements</a>
     </div>
@@ -143,7 +156,7 @@ WATER
     <p class="text-block">Water in both the soil and the air can both affect the ability for a plant to survive. The more
     reilient a plant is in variations of water abundance, the more likely it is to survive indoors.</p>
     <div ng-model="windowData">
-        <label>How good are you with plants?:</label>
+        <label>How good are you with plants? Please type in a number from 1-5, 1 being poorest and 5 best</label>
         <div range-slider min="1" max="5" model-max="windowData[0].care_lvl" pin-handle="{{windowData[0].care_lvl}}"></div>
         <input type="text" data-slider-id='carelvl' data-slidermin="0" data-slider-max="5" data-slider-step="1" ng-model="windowData[0].care_lvl"  data-slider-value={{windowData[0].care_lvl}}>
         <a ng-click="scrollTo('toxicity')">toxiciTYY!!!!Y!Y!Y!</a>
