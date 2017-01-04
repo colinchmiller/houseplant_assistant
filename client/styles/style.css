@@ -51,6 +51,9 @@ img {
     float: left;
     margin-right: 10px;
 }
+img {
+  background-color: #595407;
+}
 /********
 HEADERS
 ********/
