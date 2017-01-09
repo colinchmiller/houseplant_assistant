@@ -11,7 +11,6 @@ To Do List:
 - More padding around molecules, text alignment, center molecule images
 - More content for Houseplants section
 - Add animation for houseplants section
-- Remove unnecessary database connections
 - Review and edit content for Light section
 - Change the light selection to a scale that can be selected; throw in cool animation where
   as it's selected, a window picture on the side gets brighter

@@ -51,6 +51,9 @@ img {
     float: left;
     margin-right: 10px;
 }
+.logo {
+  float: right;
+}
 .molecule {
   background-color: #595407;
   float: none;
