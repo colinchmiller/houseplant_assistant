@@ -53,6 +53,8 @@ img {
 }
 .logo {
   float: right;
+  width: 300px;
+  height: 300px;
 }
 .molecule {
   background-color: #595407;
@@ -69,6 +71,20 @@ HEADERS
     *******/
     margin: 0;
     border: none;
+}
+/***********
+CLEARFIX TO MAINTAIN BACKGROUND WITH FLOATED CONTENT
+***********/
+.page-header:before,
+.page-header:after {
+  content: " ";
+  display: table;
+}
+.page-header:after {
+  clear: both;
+}
+.title-text {
+  float: left
 }
 .header {
   padding: 50px 0px;

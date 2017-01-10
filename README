@@ -3,7 +3,6 @@ PROJECT NOTES
 To Do List:
 
 ***Plantulate Page***
-- Create Green Skeleton Logo to Sit by Title (gif?)
 - Test to see if it's better to have the title take up the full page (except the menu) and have
   you scroll down, or to have title and welcome section together with menu and scroll from there
 - Not black for menu text; match the content text color
@@ -32,6 +31,7 @@ To Do List:
 - Create plant representations for selections at end.
 - Add icons for plants and molecules in NASA section
 - Need to animate the scroll to next section for each section
+- Convert Green Skeleton logo to gif
 
 ***Plant Library Page***
 - Make sure all plant images are legal to modify and reuse
