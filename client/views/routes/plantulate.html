@@ -101,7 +101,11 @@ Light
     <p>When picking a plant for your home, it cna be easiest to start by going off which way your
     window faces on a compass bearing. North generally gets the least, and south the most (at least, in north
     America that is).</p>
+    <p>How about selecting the light levels in the place where you'd like your plant? Places right
+    next to windows get the more light than interior spaces, and southern windows provide more light
+    than northern windows.</p>
     <div>
+      <!-- EXISTING FUNCTIONAL DIRECTION -->
       <label>Window Direction:</label>
       <ul>
         <li>
@@ -122,8 +126,18 @@ Light
         </li>
       </ul>
         <p>The Window Direction: {{windowData[0].compass}}</p>
-        <a ng-click="scrollTo('space')">Space Requirements</a>
     </div>
+    <!-- SLIDER FOR NEW INPUT, NEED TO CHANGE ALL DB AND LOGIC FOR NUMBER SCALE INSTEAD OF COMPASS -->
+    <div>
+      <input ng-model="light" id="lightslider" type="range" min="0" max="10" step="1" />
+      <h3>{{light}}</h3>
+      <div class="lightbox" ng-model="light" ng-if="light == 1" ng-style="trulite">
+
+      </div>
+    </div>
+
+
+    <a ng-click="scrollTo('space')">Space Requirements</a>
   </div>
 </div>
 

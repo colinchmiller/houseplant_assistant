@@ -14,6 +14,14 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
     $scope.windownames = [];
     $scope.suggestedPlants = [];
 
+    $scope.light = 0;
+
+
+        $scope.trulite = {
+          "background-color" : "#000"
+        }
+  
+
 
 
     $scope.plantcheck = [{name : "Bamboo Palm", value : false}, {name : "Chinese Evergreen", value : false},

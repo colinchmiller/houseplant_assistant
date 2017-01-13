@@ -3,9 +3,6 @@ PROJECT NOTES
 To Do List:
 
 ***Plantulate Page***
-- Test to see if it's better to have the title take up the full page (except the menu) and have
-  you scroll down, or to have title and welcome section together with menu and scroll from there
-- Not black for menu text; match the content text color
 - More content for NASA intro
 - More padding around molecules, text alignment, center molecule images
 - More content for Houseplants section
@@ -51,6 +48,8 @@ To Do List:
 
 Bugs:
 - Can't get bootstrap css affix to stick the nav to the top of the screen when you scroll down
+- Light slider is not causing color change in box when slider input adjusted to 1 ***UPDATE*** works with
+  ng-if, but might have to make each iteration a unique DOM element
 
 
 Site Overview:
