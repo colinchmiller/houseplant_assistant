@@ -178,11 +178,12 @@ WATER
     reilient a plant is in variations of water abundance, the more likely it is to survive indoors.</p>
     <div ng-model="windowData">
         <label>How good are you with plants? Please type in a number from 1-5, 1 being poorest and 5 best</label>
-        <div range-slider min="1" max="5" model-max="windowData[0].care_lvl" pin-handle="{{windowData[0].care_lvl}}"></div>
-        <input type="text" data-slider-id='carelvl' data-slidermin="0" data-slider-max="5" data-slider-step="1" ng-model="windowData[0].care_lvl"  data-slider-value={{windowData[0].care_lvl}}>
-        <a ng-click="scrollTo('toxicity')">toxicity icon</a>
+        <input type="text" name="height" id="height" ng-model="windowData[0].care_lvl" value={{windowData[0].care_lvl}}>
+        <input type="range" min="0" max="100" step="1" id="height" ng-model="windowData[0].care_lvl" value={{windowData[0].care_lvl}}>
+        <p>{{windowData[0].care_lvl}}</p>  
     </div>
   </div>
+  <a ng-click="scrollTo('toxicity')">toxicity icon</a>
 </div>
 
 <!--*******
