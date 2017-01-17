@@ -3,8 +3,10 @@ PROJECT NOTES
 To Do List:
 
 ***Plantulate Page***
+- New Green Skeleton Logo
 - More content for NASA intro
 - More padding around molecules, text alignment, center molecule images
+- Molecules change color/animated on hover
 - More content for Houseplants section
 - Add animation for houseplants section
 - Review and edit content for Light section
@@ -28,7 +30,7 @@ To Do List:
 - Create plant representations for selections at end.
 - Add icons for plants and molecules in NASA section
 - Need to animate the scroll to next section for each section
-- Convert Green Skeleton logo to gif
+
 
 ***Plant Library Page***
 - Make sure all plant images are legal to modify and reuse
@@ -48,8 +50,6 @@ To Do List:
 
 Bugs:
 - Can't get bootstrap css affix to stick the nav to the top of the screen when you scroll down
-- Light slider is not causing color change in box when slider input adjusted to 1 ***UPDATE*** works with
-  ng-if, but might have to make each iteration a unique DOM element
 
 
 Site Overview:
