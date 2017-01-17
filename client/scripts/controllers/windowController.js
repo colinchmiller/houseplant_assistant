@@ -16,11 +16,19 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
 
     $scope.light = 0;
 
+    $scope.trulite = {"background-color": "#ccc"}
 
+    $scope.changeLight = function(){
+      if($scope.light == 1){
         $scope.trulite = {
           "background-color" : "#000"
         }
-  
+      }
+    }
+
+
+
+
 
 
 

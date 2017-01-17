@@ -129,9 +129,9 @@ Light
     </div>
     <!-- SLIDER FOR NEW INPUT, NEED TO CHANGE ALL DB AND LOGIC FOR NUMBER SCALE INSTEAD OF COMPASS -->
     <div>
-      <input ng-model="light" id="lightslider" type="range" min="0" max="10" step="1" />
+      <input ng-model="light" id="lightslider" type="range" min="0" max="10" step="1" ng-change="changeLight()"/>
       <h3>{{light}}</h3>
-      <div class="lightbox" ng-model="light" ng-if="light == 1" ng-style="trulite">
+      <div class="lightbox" ng-model="light" ng-style="trulite">
 
       </div>
     </div>
