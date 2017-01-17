@@ -21,41 +21,49 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
     $scope.changeLight = function(){
       if($scope.light == 0){
         $scope.trulite = {
+          "transition": "background-color 0.5s ease",
           "background-color" : "#000"
         }
       }
       if($scope.light == 1){
         $scope.trulite = {
+          "transition": "background-color 0.5s ease",
           "background-color" : "#222"
         }
       }
       if($scope.light == 2){
         $scope.trulite = {
+          "transition": "background-color 0.5s ease",
           "background-color" : "#333"
         }
       }
       if($scope.light == 3){
         $scope.trulite = {
+          "transition": "background-color 0.5s ease",
           "background-color" : "#444"
         }
       }
       if($scope.light == 4){
         $scope.trulite = {
+          "transition": "background-color 0.5s ease",
           "background-color" : "#555"
         }
       }
       if($scope.light == 5){
         $scope.trulite = {
+          "transition": "background-color 0.5s ease",
           "background-color" : "#777"
         }
       }
       if($scope.light == 6){
         $scope.trulite = {
+          "transition": "background-color 0.5s ease",
           "background-color" : "#999"
         }
       }
       if($scope.light == 7){
         $scope.trulite = {
+          "transition": "background-color 0.5s ease",
           "background-color" : "#aaa"
         }
       }
@@ -66,11 +74,13 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
       }
       if($scope.light == 9){
         $scope.trulite = {
+          "transition": "background-color 0.5s ease",
           "background-color" : "#eee"
         }
       }
       if($scope.light == 10){
         $scope.trulite = {
+          "transition": "background-color 0.5s ease",
           "background-color" : "#fff"
         }
       }
