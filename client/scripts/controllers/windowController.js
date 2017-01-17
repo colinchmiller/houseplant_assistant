@@ -16,12 +16,57 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
 
     $scope.light = 0;
 
-    $scope.trulite = {"background-color": "#ccc"}
+    $scope.trulite = {"background-color": "#000"}
 
     $scope.changeLight = function(){
       if($scope.light == 1){
         $scope.trulite = {
-          "background-color" : "#000"
+          "background-color" : "#111"
+        }
+      }
+      if($scope.light == 2){
+        $scope.trulite = {
+          "background-color" : "#222"
+        }
+      }
+      if($scope.light == 3){
+        $scope.trulite = {
+          "background-color" : "#333"
+        }
+      }
+      if($scope.light == 4){
+        $scope.trulite = {
+          "background-color" : "#444"
+        }
+      }
+      if($scope.light == 5){
+        $scope.trulite = {
+          "background-color" : "#555"
+        }
+      }
+      if($scope.light == 6){
+        $scope.trulite = {
+          "background-color" : "#666"
+        }
+      }
+      if($scope.light == 7){
+        $scope.trulite = {
+          "background-color" : "#777"
+        }
+      }
+      if($scope.light == 8){
+        $scope.trulite = {
+          "background-color" : "#888"
+        }
+      }
+      if($scope.light == 9){
+        $scope.trulite = {
+          "background-color" : "#999"
+        }
+      }
+      if($scope.light == 10){
+        $scope.trulite = {
+          "background-color" : "#aaa"
         }
       }
     }
