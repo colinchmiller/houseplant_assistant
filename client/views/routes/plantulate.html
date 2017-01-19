@@ -9,7 +9,9 @@ INTRODUCTION
       your skill level, there is a plant available for you to be able to grow in your home. But before
       we get down to earth in the dirt of hosueplants, I need to start with space, and with NASA
       to be specific.</p>
-      <a ng-click="scrollTo('nasa')">NASA</a>
+      <div class="scroll-button">
+        <a ng-click="scrollTo('nasa')">NASA</a>
+      </div>
   </div>
 </div>
 
@@ -75,7 +77,10 @@ NASA EXPERIMENT
       NASA sealed a variety of plants in containers with these chemicals present and measured the amount that was absorbed by the plants. They also did this with the plants trimmed away, and discovered that it is not only the plant that removes the chemicals from the air, but the bacteria in the soil that the plants’ root systems cultivated. But why did NASA decide to use houseplants and not other plants? Well, for space constraints, of course. But houseplants also tend to have a better survival rate for indoor conditions, which can be hostile to plants. Let’s take a look at why this is.
     </p>
   </div>
-  <a ng-click="scrollTo('houseplant')">Houseplants Overview</a>
+  <div class="scroll-button">
+    <a ng-click="scrollTo('houseplant')">Houseplants Overview</a>
+  </div>
+
 </div>
 
 <!--*********
@@ -88,7 +93,9 @@ WHAT MAKES A PLANT A GOOD HOUSEPLANT
     particularly in homes in areas with a distinct winter season, can be difficult for a houseplant
     to survive in. Let's look at some of the factors that can affect a plant's success and see if we can
     find the best houseplant to clean the air and fit your needs.</p>
-    <a ng-click="scrollTo('light')">Light</a>
+    <div class="scroll-button">
+      <a ng-click="scrollTo('light')">Light</a>
+    </div>
   </div>
 </div>
 
@@ -138,8 +145,10 @@ Light
       </div>
     </div>
 
+    <div class="scroll-button">
+      <a ng-click="scrollTo('space')">Space Requirements</a>
+    </div>
 
-    <a ng-click="scrollTo('space')">Space Requirements</a>
   </div>
 </div>
 
@@ -164,7 +173,10 @@ SPACE REQUIREMENTS
       <input type="range" min="0" max="100" step="1" id="height" ng-model="windowData[0].height" value={{windowData[0].height}}>
       <p>{{windowData[0].height}}</p>
     </div>
-    <a ng-click="scrollTo('water')">WATER</a>
+    <div class="scroll-button">
+      <a ng-click="scrollTo('water')">WATER</a>
+    </div>
+
   </div>
 </div>
 
@@ -180,10 +192,13 @@ WATER
         <label>How good are you with plants? Please type in a number from 1-5, 1 being poorest and 5 best</label>
         <input type="text" name="height" id="height" ng-model="windowData[0].care_lvl" value={{windowData[0].care_lvl}}>
         <input type="range" min="0" max="100" step="1" id="height" ng-model="windowData[0].care_lvl" value={{windowData[0].care_lvl}}>
-        <p>{{windowData[0].care_lvl}}</p>  
+        <p>{{windowData[0].care_lvl}}</p>
     </div>
   </div>
-  <a ng-click="scrollTo('toxicity')">toxicity icon</a>
+  <div class="scroll-button">
+    <a ng-click="scrollTo('toxicity')">toxicity icon</a>
+  </div>
+
 </div>
 
 <!--*******
@@ -200,7 +215,10 @@ TOXICITY
         <input type="checkbox" name="cats" id="cats" ng-model="windowData[0].cats" value={{windowData[0].cats}}>
         <label for="dogs">Cats?:</label>
         <input type="checkbox" name="dogs" id="dogs" ng-model="windowData[0].dogs" value={{windowData[0].dogs}}>
-        <a ng-click="scrollTo('submission')">Submissooon</a>
+
+    </div>
+    <div class="scroll-button">
+      <a ng-click="scrollTo('submission')">Submissooon</a>
     </div>
   </div>
 </div>
