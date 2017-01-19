@@ -48,8 +48,6 @@ IMAGES
 img {
     height: 150px;
     width: 150px;
-    float: left;
-    margin-right: 10px;
 }
 .logo {
   float: right;
@@ -59,8 +57,9 @@ img {
   margin-top: -50px;
 }
 .molecule {
-  background-color: #595407;
-  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 /********
 HEADERS
@@ -128,11 +127,14 @@ PLANT SELECTOR
     border: 1px solid #363B16;
 }
 /********
-TEXT BLOCK
+MAIN CONTENT STYLING
 *********/
 .text-block {
   border-top: 1px solid #595407;
   padding-top: 25px;
+}
+.section {
+  margin: 25px 0;
 }
 /*********
 PLANT LIBRARY
@@ -176,6 +178,9 @@ COLUMN
 }
 .plant-list {
   background-color: #ccc;
+}
+.column h4 {
+  text-align: center;
 }
 
 
