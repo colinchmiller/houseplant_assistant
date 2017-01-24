@@ -105,38 +105,18 @@ Light
     <p class="text-block">Light is one of the most important things for a plant to have, and is also one of the factors that can vary the most inside a person’s home. Depending on the room’s number of windows, which way their facing, and whether there are any outside trees or buildings that could block sunlight getting in can result in full, bright, direct sunlight or almost non-existent light. In most homes, however, light levels tend to skew to the lower side. As a result, many popular houseplants do not require as much light to survive. These are often tropical understory plants that are used to low light conditions.</p>
     <p>To determine how bright your room is for picking the right houseplant, keep in mind that northern windows receive the least light, while southern-facing windows receive the most. If there are buildings or trees near the window, they’ll also block light. On the scale below, you can select a general estimate for the amount of natural light the tour room gets.</p>
 
-      <!-- OLD DIRECTIONAL CHOICE -->
-    <!-- <div>
-      <label>Window Direction:</label>
-      <ul>
-        <li>
-          <label>North</label>
-          <input type="radio" ng-model="windowData[0].compass" value="North">
-        </li>
-        <li>
-          <label>South</label>
-          <input type="radio" ng-model="windowData[0].compass" value="South">
-        </li>
-        <li>
-          <label>East</label>
-          <input type="radio" ng-model="windowData[0].compass" value="East">
-        </li>
-        <li>
-          <label>West</label>
-          <input type="radio" ng-model="windowData[0].compass" value="West">
-        </li>
-      </ul>
-        <p>The Window Direction: {{windowData[0].compass}}</p>
-    </div> -->
-
     <!-- SLIDER FOR NEW INPUT, NEED TO CHANGE ALL DB AND LOGIC FOR NUMBER SCALE INSTEAD OF COMPASS -->
-    <div>
-      <input ng-model="light" id="lightslider" type="range" min="0" max="10" step="1" ng-change="changeLight()"/>
-      <h3>{{light}}</h3>
-      <div class="lightbox" ng-model="light" ng-style="trulite">
-        <img src="./vendors/images/HouseplantLightScale.png">
-      </div>
+
+    <input ng-model="light" id="lightslider" type="range" min="0" max="10" step="1" value="0" ng-change="changeLight()"/>
+    <h3>{{light}}</h3>
+
+    <!-- IMAGE THAT LIGHTENS AS SLIDER IS INCREASED -->
+    <div class="box grouping">
+      <div class="lightbox" ng-model="light" ng-style="trulite"></div>
+      <img src="./vendors/images/HouseplantLightScale.png">
     </div>
+
+
 
     <div class="scroll-button">
       <a ng-click="scrollTo('space')">Space Requirements</a>
@@ -210,13 +190,13 @@ TOXICITY
 
     </div>
     <div class="scroll-button">
-      <a ng-click="scrollTo('submission')">Submissooon</a>
+      <a ng-click="scrollTo('submission')">Suggest a Plant</a>
     </div>
   </div>
 </div>
 
 <div class="container" id="submission">
-    <input type="submit" ng-click="suggestPlant()" value="Suggest Plants"/>
+    <input class="btn btn-warn" type="submit" ng-click="suggestPlant()" value="Suggest Plants"/>
     <div class="container" ng-repeat = "plant in suggestedPlants">
         <h4>{{plant.name}}</h4>
     </div>

@@ -4,10 +4,6 @@ To Do List:
 
 ***Plantulate Page*** (6 Days)
 
-- space slider will affect an image of a window to the side
-- Water section needs more content; need to focus on frequency/reliability of watering for plant
-  measuring input
-- Need some kind of image or animation to go with water
 - Toxicity section needs more content
 - Refine selectors for plant toxicity and image for section
 - If no plants are available due to toxicity exposure, need to provide alternative section on how
@@ -23,9 +19,12 @@ To Do List:
 - Create scroll button icon (down-arrow)
 - Animate molecules on hover
 - Add animated gif for houseplants section
+- space slider will affect an image of a window to the side
+- Need some kind of image or animation to go with water
 
 
 ***Plant Library Page*** (2 Days)
+- Parallax for plant image backgrounds with content on either side?
 - Make sure all plant images are legal to modify and reuse
 - Alter pics so that the backgrounds are consistent
 - Review plant descriptions, create more space below them so they aren't right against the bottom

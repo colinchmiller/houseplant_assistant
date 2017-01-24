@@ -1,4 +1,5 @@
-var username;
+
+///////// PLANT SELECTION CONTROLLER
 
 myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$anchorScroll', function($scope, $http, $location, $anchorScroll){
     console.log('WindowCriteriaController is now running');
@@ -14,10 +15,11 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
     $scope.windownames = [];
     $scope.suggestedPlants = [];
 
+    //////// INITIALIZE SCOPE VARIABLES
     $scope.light = 0;
-
     $scope.trulite = {"background-color": "#000"}
 
+    /////// HUE LIGHTENS BEHIND CITY IMAGE AS LIGHT LEVEL SELECTION IS INCREASED
     $scope.changeLight = function(){
       if($scope.light == 0){
         $scope.trulite = {

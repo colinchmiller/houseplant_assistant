@@ -145,8 +145,6 @@ PLANT LIBRARY
 *********/
 .plants {
     background-color: #D2DB8C;
-    height: 200px;
-    border: 1px solid #363B16;
 }
 /*********
 PLANTULATE PAGE ALTERNATE STYLING
@@ -191,10 +189,16 @@ COLUMN
 SCALING LIGHTBOX
 ***********/
 .lightbox {
+  position: absolute;
+  width: 400px;
+  height: 390px;
+  margin: 45px;
+}
+.box img {
+  position: absolute;
   width: 500px;
   height: 500px;
 }
-.lightbox img {
-  width: 500px;
+.box {
   height: 500px;
 }
