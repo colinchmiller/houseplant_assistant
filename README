@@ -2,9 +2,7 @@ PROJECT NOTES
 
 To Do List:
 
-***Plantulate Page***
-- More content for Houseplants section
-- Add animated gif for houseplants section
+***Plantulate Page*** (6 Days)
 - Review and edit content for Light section
 - Change the light selection to a scale that can be selected; throw in cool animation where
   as it's selected, a window picture on the side gets brighter
@@ -29,9 +27,10 @@ To Do List:
 - Scroll button styling
 - Create scroll button icon (down-arrow)
 - Animate molecules on hover
+- Add animated gif for houseplants section
 
 
-***Plant Library Page***
+***Plant Library Page*** (2 Days)
 - Make sure all plant images are legal to modify and reuse
 - Alter pics so that the backgrounds are consistent
 - Review plant descriptions, create more space below them so they aren't right against the bottom
@@ -42,7 +41,7 @@ To Do List:
 - Text should not be black, match other content color
 - Remove top and bottom border for plant sections? Color difference kind of does that for you
 
-***General***
+***General*** (Part of Plant Library Timeline)
 - Does this site need a footer? Could add social icons, contact info to me
 - Chase down the error that is appearing in the console on the browser
 - Clean up backend/ database connections
