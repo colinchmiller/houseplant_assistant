@@ -4,9 +4,7 @@ To Do List:
 
 ***Plantulate Page*** (6 Days)
 
-- More content for space section
-- Change the space selection to a scale that can be adjusted for height and width, and will affect
-  and image of a window to the side
+- space slider will affect an image of a window to the side
 - Water section needs more content; need to focus on frequency/reliability of watering for plant
   measuring input
 - Need some kind of image or animation to go with water
@@ -46,7 +44,7 @@ To Do List:
 Bugs:
 - Can't get bootstrap css affix to stick the nav to the top of the screen when you scroll down
 - space around image for lightscale is also changing lightness with scaling because it's exposed background
-
+  sub: will need to separate lightbox div from img element and layer over one another to have smaller lightbox behind image
 
 Site Overview:
 Reforming the layout of the page to progress down through explanation of NASA air study

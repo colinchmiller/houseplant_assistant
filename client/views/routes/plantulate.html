@@ -178,10 +178,10 @@ WATER
 <div class="container" id="water">
   <div class="row">
     <h2 class="header">Water</h2>
-    <p class="text-block">Water in both the soil and the air can both affect the ability for a plant to survive. The more
-    reilient a plant is in variations of water abundance, the more likely it is to survive indoors.</p>
+    <p class="text-block">Plants need water to process light energy into food. Generally, the less light that a plant is exposed to, the less water it needs to survive. But that’s not the only part of watering plants. Each plant variety requires different levels of water to survive, based upon the environment in which they’ve evolved. For some, having the roots frequently saturated with water will rot them, others depend on it to thrive. Every plant is more or less flexible with the water levels it needs. Many houseplants can handle infrequent watering periods, but not all.</p>
+    <p>In choosing the best houseplant for you, we will use frequency of watering as an indicator of the plants’ health. This doesn’t mean that a specific plant needs more or less water overall, but more how tough it is in the face of neglect. Select on the sliding scale how frequently you think you would remember to water your houseplants.</p>
     <div ng-model="windowData">
-        <label>How good are you with plants? Please type in a number from 1-5, 1 being poorest and 5 best</label>
+        <label>How frequently would you water your plant? (Infrequent to Frequent)</label>
         <input type="text" name="height" id="height" ng-model="windowData[0].care_lvl" value={{windowData[0].care_lvl}}>
         <input type="range" min="0" max="100" step="1" id="height" ng-model="windowData[0].care_lvl" value={{windowData[0].care_lvl}}>
         <p>{{windowData[0].care_lvl}}</p>

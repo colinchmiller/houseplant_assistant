@@ -187,10 +187,14 @@ COLUMN
   text-align: center;
 }
 
-
-
-
+/***********
+SCALING LIGHTBOX
+***********/
 .lightbox {
-  width: 150px;
-  height: 150px;
+  width: 500px;
+  height: 500px;
+}
+.lightbox img {
+  width: 500px;
+  height: 500px;
 }
