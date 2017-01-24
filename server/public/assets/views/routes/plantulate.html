@@ -128,13 +128,13 @@ Light
       </ul>
         <p>The Window Direction: {{windowData[0].compass}}</p>
     </div> -->
-    
+
     <!-- SLIDER FOR NEW INPUT, NEED TO CHANGE ALL DB AND LOGIC FOR NUMBER SCALE INSTEAD OF COMPASS -->
     <div>
       <input ng-model="light" id="lightslider" type="range" min="0" max="10" step="1" ng-change="changeLight()"/>
       <h3>{{light}}</h3>
       <div class="lightbox" ng-model="light" ng-style="trulite">
-
+        <img src="./vendors/images/HouseplantLightScale.png">
       </div>
     </div>
 

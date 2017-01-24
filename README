@@ -3,10 +3,7 @@ PROJECT NOTES
 To Do List:
 
 ***Plantulate Page*** (6 Days)
-- Review and edit content for Light section
-- Change the light selection to a scale that can be selected; throw in cool animation where
-  as it's selected, a window picture on the side gets brighter
-- Create window image to be used in light section, space section
+
 - More content for space section
 - Change the space selection to a scale that can be adjusted for height and width, and will affect
   and image of a window to the side
@@ -48,6 +45,7 @@ To Do List:
 
 Bugs:
 - Can't get bootstrap css affix to stick the nav to the top of the screen when you scroll down
+- space around image for lightscale is also changing lightness with scaling because it's exposed background
 
 
 Site Overview:
