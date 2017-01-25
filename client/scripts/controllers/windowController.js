@@ -1,21 +1,14 @@
 
-///////// PLANT SELECTION CONTROLLER
+// ********
+// PLANT SELECTION CONTROLLER
+// ********
 
 myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$anchorScroll', function($scope, $http, $location, $anchorScroll){
     console.log('WindowCriteriaController is now running');
 
-    /////////////variables for presenting data on DOM//////////////
-    $scope.plantinventory = [];
-    $scope.windowcost = 0;
-    $scope.benzene = 0;
-    $scope.trichloroethylene = 0;
-    $scope.formaldehyde = 0;
-    $scope.plantsForWindow = [];
-    $scope.windowData = [];
-    $scope.windownames = [];
-    $scope.suggestedPlants = [];
-
-    //////// INITIALIZE SCOPE VARIABLES
+    // *********
+    // INITIALIZE SCOPE VARIABLES
+    // *********
     $scope.light = 0;
     $scope.width = 0;
     $scope.height = 0;
@@ -25,7 +18,9 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
     $scope.human = false;
     $scope.trulite = {"background-color": "#000"}
 
-    /////// HUE LIGHTENS BEHIND CITY IMAGE AS LIGHT LEVEL SELECTION IS INCREASED
+    // **********
+    // BACKGROUND LIGHT FOR IMAGE
+    // **********
     $scope.changeLight = function(){
       if($scope.light == 0){
         $scope.trulite = {
@@ -112,6 +107,9 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
     //$scope.plantcheck = ['Bamboo Palm', 'Chinese Evergreen', 'English Ivy', 'Gerbera Daisy', 'Janet Craig',
     //'Marginata', 'Mass Cane', 'Snake Plant', 'Peace Lily', 'Pot Mum'];
 
+    // **********
+    // SCROLLING BUTTON
+    // **********
     $scope.scrollTo = function(id) {
       $location.hash(id);
       $anchorscroll();
@@ -143,18 +141,6 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
     };
 
     //////////Get Calls////////////////
-
-    //Finding the User to prep getting data
-    $scope.getUser = function() {
-        $http({
-            method: "GET",
-            url: "/login"
-        }).then(
-            function (response) {
-                username = response.data;
-                $scope.getWindows();
-            });
-    };
 
     //Getting the window names by user
     $scope.getWindows = function(){

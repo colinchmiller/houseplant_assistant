@@ -17,5 +17,3 @@ myApp.controller('PlantController', ['$scope', '$http', function($scope, $http){
     $scope.getPlants();
 
 }]);
-
-
