@@ -89,12 +89,6 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
       }
     }
 
-
-
-
-
-
-
     $scope.plantcheck = [{name : "Bamboo Palm", value : false}, {name : "Chinese Evergreen", value : false},
         {name : "English Ivy", value : false}, {name: "Gerbera Daisy", value : false}, {name : "Janet Craig", value : false},
         {name : "Marginata", value : false}, {name : "Mass Cane", value : false}, {name : "Snake Plant", value : false},
@@ -348,10 +342,5 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
         }
         console.log("This is the suggested plant list: ", $scope.suggestedPlants);
     };
-
-
-    /////////////Execution on page load////////////////
-
-    $scope.getUser();
 
 }]);
