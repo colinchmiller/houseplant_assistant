@@ -53,7 +53,9 @@ img {
   float: right;
   width: 400px;
   height: 400px;
-  /*move logo up 50px because of whitespace on image*/
+  /********
+  ADJUST FOR WHITESPACE ABOVE IMAGE
+  ********/
   margin-top: -50px;
 }
 .molecule {

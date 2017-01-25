@@ -24,6 +24,9 @@ NASA EXPERIMENT
     <p class="text-block">
       NASA understood that plants could clean the air, and they were interested in seeing if small houseplants, which were already shown to survive in containers, could be used as a means of cleaning the air in space stations, rather than expensive air filtering equipment. More specifically, they wanted to see if the plants could remove common chemicals in the air that could be harmful to human health. These chemicals were:
     </p>
+    <!-- **********
+    MOLECULE COLUMNS
+    *********** -->
     <div class="grouping section">
       <div class="column">
         <h4>Benzene</h4>
@@ -73,6 +76,9 @@ NASA EXPERIMENT
         </div>
       </div>
     </div>
+    <!-- ********
+    BOTTOM NASA TEXT
+    ********* -->
     <p class="text-block">
       NASA sealed a variety of plants in containers with these chemicals present and measured the amount that was absorbed by the plants. They also did this with the plants trimmed away, and discovered that it is not only the plant that removes the chemicals from the air, but the bacteria in the soil that the plants’ root systems cultivated. But why did NASA decide to use houseplants and not other plants? Well, for space constraints, of course. But houseplants also tend to have a better survival rate for indoor conditions, which can be hostile to plants. Let’s take a look at why this is.
     </p>
@@ -84,7 +90,7 @@ NASA EXPERIMENT
 </div>
 
 <!--*********
-WHAT MAKES A PLANT A GOOD HOUSEPLANT
+HOUSEPLANT
 **********-->
 <div class="container" id="houseplant">
   <div class="row">
@@ -97,31 +103,25 @@ WHAT MAKES A PLANT A GOOD HOUSEPLANT
 </div>
 
 <!--********
-Light
+LIGHT
 *********-->
 <div class="container" id="light">
   <div class="row">
     <h2 class="header">Light</h2>
     <p class="text-block">Light is one of the most important things for a plant to have, and is also one of the factors that can vary the most inside a person’s home. Depending on the room’s number of windows, which way their facing, and whether there are any outside trees or buildings that could block sunlight getting in can result in full, bright, direct sunlight or almost non-existent light. In most homes, however, light levels tend to skew to the lower side. As a result, many popular houseplants do not require as much light to survive. These are often tropical understory plants that are used to low light conditions.</p>
     <p>To determine how bright your room is for picking the right houseplant, keep in mind that northern windows receive the least light, while southern-facing windows receive the most. If there are buildings or trees near the window, they’ll also block light. On the scale below, you can select a general estimate for the amount of natural light the tour room gets.</p>
-
-    <!-- SLIDER FOR NEW INPUT, NEED TO CHANGE ALL DB AND LOGIC FOR NUMBER SCALE INSTEAD OF COMPASS -->
-
     <input ng-model="light" id="lightslider" type="range" min="0" max="10" step="1" value="0" ng-change="changeLight()"/>
     <h3>{{light}}</h3>
-
-    <!-- IMAGE THAT LIGHTENS AS SLIDER IS INCREASED -->
+    <!--****
+    IMAGE BOX
+    *****-->
     <div class="box grouping">
       <div class="lightbox" ng-model="light" ng-style="trulite"></div>
       <img src="./vendors/images/HouseplantLightScale.png">
     </div>
-
-
-
     <div class="scroll-button">
       <a ng-click="scrollTo('space')">Space Requirements</a>
     </div>
-
   </div>
 </div>
 
@@ -133,22 +133,21 @@ SPACE REQUIREMENTS
     <h2 class="header">Space Needs</h2>
     <p class="text-block">Indoor plants obviously have less space available to them than if they were outdoors. The shortage is both in container space, which limits the ability of roots to spread out and find enough nutrients and water to feed the plant, and in the air height and width, which restricts the ability for the plant to spread out branches or leaves to collect enough sunlight to grow. Because windows, the light source for plants, are usually on the walls and not in the ceilings, plants have less incentive to grow tall indoors.</p>
     <p>For the purposes of determining the height of the plant in your home, we’ll focus just on the air height of the plant, and assume that you have at least a foot of space beneath these calculations for the height of the pot. On the sliders below, select the height and width you have available.</p>
-    <div class="dimensions" ng-model="windowData">
+    <div>
       <p>First off, about how wide is the space that you have for your plant?</p>
       <label for="width">Width in inches:</label>
-      <input type="text" name="width" id="width" ng-model="windowData[0].width" value={{windowData[0].width}}>
-      <input type="range" min="0" max="100" step="1" id="width" ng-model="windowData[0].width" value={{windowData[0].width}}>
-      <p>{{windowData[0].width}}</p>
+      <input type="text" name="width" id="width" ng-model="width" value={{width}}>
+      <input type="range" min="0" max="100" step="1" value="0" id="width" ng-model="width">
+      <p>{{width}}</p>
       <p>Next, how much height do you have available?</p>
       <label for="height">Height:</label>
-      <input type="text" name="height" id="height" ng-model="windowData[0].height" value={{windowData[0].height}}>
-      <input type="range" min="0" max="100" step="1" id="height" ng-model="windowData[0].height" value={{windowData[0].height}}>
-      <p>{{windowData[0].height}}</p>
+      <input type="text" name="height" id="height" ng-model="height" value=height>
+      <input type="range" min="0" max="100" step="1" value="0" id="height" ng-model="height">
+      <p>{{height}}</p>
     </div>
     <div class="scroll-button">
       <a ng-click="scrollTo('water')">WATER</a>
     </div>
-
   </div>
 </div>
 
@@ -160,17 +159,15 @@ WATER
     <h2 class="header">Water</h2>
     <p class="text-block">Plants need water to process light energy into food. Generally, the less light that a plant is exposed to, the less water it needs to survive. But that’s not the only part of watering plants. Each plant variety requires different levels of water to survive, based upon the environment in which they’ve evolved. For some, having the roots frequently saturated with water will rot them, others depend on it to thrive. Every plant is more or less flexible with the water levels it needs. Many houseplants can handle infrequent watering periods, but not all.</p>
     <p>In choosing the best houseplant for you, we will use frequency of watering as an indicator of the plants’ health. This doesn’t mean that a specific plant needs more or less water overall, but more how tough it is in the face of neglect. Select on the sliding scale how frequently you think you would remember to water your houseplants.</p>
-    <div ng-model="windowData">
+    <div ng-model="water">
         <label>How frequently would you water your plant? (Infrequent to Frequent)</label>
-        <input type="text" name="height" id="height" ng-model="windowData[0].care_lvl" value={{windowData[0].care_lvl}}>
-        <input type="range" min="0" max="100" step="1" id="height" ng-model="windowData[0].care_lvl" value={{windowData[0].care_lvl}}>
-        <p>{{windowData[0].care_lvl}}</p>
+        <input type="range" min="0" max="100" step="1" value="0" id="height" ng-model="water">
+        <p>{{water}}</p>
     </div>
   </div>
   <div class="scroll-button">
     <a ng-click="scrollTo('toxicity')">toxicity icon</a>
   </div>
-
 </div>
 
 <!--*******
@@ -180,14 +177,15 @@ TOXICITY
   <div class="row">
     <h2 class="header">Toxicity</h2>
     <p class="text-block">Many household plants are toxic to varying degrees of severity.</p>
-    <div ng-model="windowData">
-        <label for="kids">Child that likes to eat houseplants?:</label>
-        <input type="checkbox" name="kids" id="kids" ng-model="windowData[0].kids" value={{windowData[0].kids}}>
-        <label for="cats">Dogs?:</label>
-        <input type="checkbox" name="cats" id="cats" ng-model="windowData[0].cats" value={{windowData[0].cats}}>
-        <label for="dogs">Cats?:</label>
-        <input type="checkbox" name="dogs" id="dogs" ng-model="windowData[0].dogs" value={{windowData[0].dogs}}>
-
+    <div>
+        <label for="human">Child that likes to eat houseplants?:</label>
+        <input type="checkbox" name="human" id="human" ng-model="human">
+        <br>
+        <label for="cats">Cats?:</label>
+        <input type="checkbox" name="cats" id="cats" ng-model="cat">
+        <br>
+        <label for="dogs">Dogs?:</label>
+        <input type="checkbox" name="dogs" id="dogs" ng-model="dog">
     </div>
     <div class="scroll-button">
       <a ng-click="scrollTo('submission')">Suggest a Plant</a>
@@ -195,26 +193,19 @@ TOXICITY
   </div>
 </div>
 
+<!-- ************
+SUGGEST PLANT BUTTON
+ ************ -->
 <div class="container" id="submission">
     <input class="btn btn-warn" type="submit" ng-click="suggestPlant()" value="Suggest Plants"/>
+    <p>Light: {{light}}</p>
+    <p>Width: {{width}}</p>
+    <p>Height: {{height}}</p>
+    <p>Water: {{water}}</p>
+    <p>Cats: {{cat}}</p>
+    <p>Dogs: {{dog}}</p>
+    <p>Human: {{human}}</p>
     <div class="container" ng-repeat = "plant in suggestedPlants">
         <h4>{{plant.name}}</h4>
     </div>
 </div>
-
-
-
-<!-- <div class="container">
-    <div id="localplants">
-        <h4>Plant Inventory for this Window: {{plantinventory[0]}}</h4>
-    </div>
-    <div id="localchemicals">
-        <h4>Chemicals Removed for this Window:</h4>
-            <ul>
-                <li>Benzene: {{benzene}} Micrograms over 24 hours</li>
-                <li>Trichloroethylene: {{trichloroethylene}} Micrograms over 24 hours</li>
-                <li>Formaldehyde: {{formaldehyde}} Micrograms over 24 hours</li>
-            </ul>
-    </div>
-
-</div> -->

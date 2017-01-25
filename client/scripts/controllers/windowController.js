@@ -17,6 +17,12 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
 
     //////// INITIALIZE SCOPE VARIABLES
     $scope.light = 0;
+    $scope.width = 0;
+    $scope.height = 0;
+    $scope.water = 0;
+    $scope.cat = false;
+    $scope.dog = false;
+    $scope.human = false;
     $scope.trulite = {"background-color": "#000"}
 
     /////// HUE LIGHTENS BEHIND CITY IMAGE AS LIGHT LEVEL SELECTION IS INCREASED
