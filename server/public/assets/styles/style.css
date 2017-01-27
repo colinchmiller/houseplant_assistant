@@ -224,3 +224,8 @@ SCALING LIGHTBOX
   border: none;
   background-color: #fff;
 }
+
+.scroll-icon {
+  width: 75px;
+  height: 75px;
+}
