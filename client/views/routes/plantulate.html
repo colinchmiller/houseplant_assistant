@@ -38,7 +38,7 @@ NASA EXPERIMENT
         targeting the liver, kidneys, heart, brain, and bone marrow. It can cause DNA and chromosomial
         damage and can cause leukemia in sufficient levels. OSHA recommends a maximum exposure limit of
         0.1 ppm over 8 hours.</p>
-        <img src="./vendors/images/Houseplant-Icon.png" ng-mouseenter="benzene=true" ng-mouseleave="benzene=false">
+        <img class="plant-icon" src="./vendors/images/Houseplant-Icon.png" ng-mouseenter="benzene=true" ng-mouseleave="benzene=false">
         <div ng-show="benzene" class="plant-list">
           <h5>Gerbera Daisy</h5>
           <h5>Pot Mum</h5>
@@ -53,7 +53,7 @@ NASA EXPERIMENT
           system, although it can also affect the liver and kidneys, causing intoxication similar to that
           of alcohol. SCOEL lists the maximum exposure limit of 10 ppm over 8 hours, or 30 ppm for a short
            term limit (15 minutes).</p>
-        <img src="./vendors/images/Houseplant-Icon.png" ng-mouseenter="trichlor=true" ng-mouseleave="trichlor=false">
+        <img class="plant-icon" src="./vendors/images/Houseplant-Icon.png" ng-mouseenter="trichlor=true" ng-mouseleave="trichlor=false">
         <div ng-show="trichlor" class="plant-list">
           <h5>Marginata</h5>
           <h5>Gerbera Daisy</h5>
@@ -68,7 +68,7 @@ NASA EXPERIMENT
           and tobacco smoke, thus occurring wherever there is smog. It is toxic to all animals, causing
           eye and nasal irritation and is a known carcinogen. The maximum recommended concentration level
           is listed at 0.3 ppm.</p>
-        <img src="./vendors/images/Houseplant-Icon.png" ng-mouseenter="formald=true" ng-mouseleave="formald=false">
+        <img class="plant-icon" src="./vendors/images/Houseplant-Icon.png" ng-mouseenter="formald=true" ng-mouseleave="formald=false">
         <div ng-show="formald" class="plant-list">
           <h5>Bamboo Palm</h5>
           <h5>Mass Cane</h5>
@@ -137,13 +137,18 @@ SPACE REQUIREMENTS
       <p>First off, about how wide is the space that you have for your plant?</p>
       <label for="width">Width in inches:</label>
       <input type="text" name="width" id="width" ng-model="width" value={{width}}>
-      <input type="range" min="0" max="100" step="1" value="0" id="width" ng-model="width">
+      <input type="range" min="0" max="300" step="1" id="width" ng-model="width">
       <p>{{width}}</p>
       <p>Next, how much height do you have available?</p>
       <label for="height">Height:</label>
-      <input type="text" name="height" id="height" ng-model="height" value=height>
-      <input type="range" min="0" max="100" step="1" value="0" id="height" ng-model="height">
+      <input type="text" name="height" id="height" ng-model="height" value={{height}}>
+      <input type="range" min="0" max="300" step="1" id="height" ng-model="height">
       <p>{{height}}</p>
+      <div class="spacing-image">
+        <img class="image-slice" src="./vendors/images/SpacingCity.png">
+        <img class="image-slice" src="./vendors/images/SpacingWindow.png" style="height: {{height}}px; width: {{width}}px;">
+        <img class="image-slice" src="./vendors/images/SpacingHouseplant.png">
+      </div>
     </div>
     <div class="scroll-button">
       <a ng-click="scrollTo('water')"><img class="scroll-icon" src="./vendors/images/DownArrow-Icon.png"></a>

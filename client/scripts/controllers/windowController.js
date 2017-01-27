@@ -10,8 +10,8 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
     // INITIALIZE SCOPE VARIABLES
     // *********
     $scope.light = 0;
-    $scope.width = 0;
-    $scope.height = 0;
+    $scope.width = 100;
+    $scope.height = 100;
     $scope.water = 0;
     $scope.cat = false;
     $scope.dog = false;

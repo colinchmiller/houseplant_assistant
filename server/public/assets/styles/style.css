@@ -229,3 +229,13 @@ SCALING LIGHTBOX
   width: 75px;
   height: 75px;
 }
+.plant-icon {
+  width: 100px;
+  height: 100px;
+}
+
+.image-slice {
+  position: absolute;
+  height: 300px;
+  width: 300px;
+}
