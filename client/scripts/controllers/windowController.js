@@ -18,6 +18,18 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
     $scope.human = false;
     $scope.trulite = {"background-color": "#000"}
 
+    $scope.scalewindow = {"height" : $scope.scaleheight+"px", "width" : $scope.scalewidth+"px"}
+
+    $scope.scaleheight = $scope.height * 3;
+    $scope.scalewidth = $scope.width * 3;
+
+    $scope.scalingSize = function(){
+      $scope.scaleheight = $scope.height * 3;
+      $scope.scalewidth = $scope.width * 3;
+      $scope.scalewindow = {"height" : $scope.scaleheight+"px", "width" : $scope.scalewidth+"px"};
+      console.log($scope.scalewindow);
+    }
+
     // **********
     // BACKGROUND LIGHT FOR IMAGE
     // **********

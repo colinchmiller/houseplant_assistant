@@ -136,17 +136,19 @@ SPACE REQUIREMENTS
     <div>
       <p>First off, about how wide is the space that you have for your plant?</p>
       <label for="width">Width in inches:</label>
-      <input type="text" name="width" id="width" ng-model="width" value={{width}}>
-      <input type="range" min="0" max="300" step="1" id="width" ng-model="width">
+      <input type="text" name="width" id="width" ng-model="width" value={{width}} ng-change="scalingSize()" >
+      <input type="range" min="0" max="500" step="1" id="width" ng-model="width" ng-change="scalingSize()" >
       <p>{{width}}</p>
+      <p>{{scalewidth}}</p>
       <p>Next, how much height do you have available?</p>
       <label for="height">Height:</label>
-      <input type="text" name="height" id="height" ng-model="height" value={{height}}>
-      <input type="range" min="0" max="300" step="1" id="height" ng-model="height">
+      <input type="text" name="height" id="height" ng-model="height" value={{height}} ng-change="scalingSize()" >
+      <input type="range" min="0" max="500" step="1" id="height" ng-model="height" ng-change="scalingSize()" >
       <p>{{height}}</p>
+      <p>{{scaleheight}}</p>
       <div class="spacing-image">
         <img class="image-slice" src="./vendors/images/SpacingCity.png">
-        <img class="image-slice" src="./vendors/images/SpacingWindow.png" style="height: {{height}}px; width: {{width}}px;">
+        <img class="image-slice" src="./vendors/images/SpacingWindow.png" ng-style="scalewindow">
         <img class="image-slice" src="./vendors/images/SpacingHouseplant.png">
       </div>
     </div>
