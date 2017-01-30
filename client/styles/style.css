@@ -122,9 +122,6 @@ NAVIGATION
   margin-right: auto;
   width: 200px;
 }
-.scroll-button a{
-  font-size: 25px;
-}
 /**********
 PLANT SELECTOR
 ***********/
@@ -225,6 +222,10 @@ SCALING LIGHTBOX
   background-color: #fff;
 }
 
+.down-icon {
+  fill: red;
+}
+
 .scroll-icon {
   width: 75px;
   height: 75px;
@@ -238,4 +239,7 @@ SCALING LIGHTBOX
   position: absolute;
   height: 300px;
   width: 300px;
+}
+.spacing-image {
+  position: relative;
 }

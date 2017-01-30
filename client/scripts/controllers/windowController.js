@@ -10,8 +10,8 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
     // INITIALIZE SCOPE VARIABLES
     // *********
     $scope.light = 0;
-    $scope.width = 100;
-    $scope.height = 100;
+    $scope.width = 25;
+    $scope.height = 25;
     $scope.water = 0;
     $scope.cat = false;
     $scope.dog = false;
@@ -20,14 +20,16 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
 
     $scope.scalewindow = {"height" : $scope.scaleheight+"px", "width" : $scope.scalewidth+"px"}
 
-    $scope.scaleheight = $scope.height * 3;
-    $scope.scalewidth = $scope.width * 3;
+    $scope.scaleheight = $scope.height * 5;
+    $scope.scalewidth = $scope.width * 5;
 
+    // ************
+    // ADJUST WINDOW WIDTH AND HEIGHT BY FACTOR OF 3 WITH SCALE CHANGE
+    // ************
     $scope.scalingSize = function(){
-      $scope.scaleheight = $scope.height * 3;
-      $scope.scalewidth = $scope.width * 3;
+      $scope.scaleheight = $scope.height * 5;
+      $scope.scalewidth = $scope.width * 5;
       $scope.scalewindow = {"height" : $scope.scaleheight+"px", "width" : $scope.scalewidth+"px"};
-      console.log($scope.scalewindow);
     }
 
     // **********
