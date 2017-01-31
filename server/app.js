@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 
 //Routes
 var index = require('./routes/index');
-var plants = require('./routes/plants');
+var plants = require('./routes/plants.js');
 var windows = require('./routes/windows');
 var windownames = require('./routes/windownames');
 var windowplants = require('./routes/windowplants');
@@ -25,5 +25,5 @@ app.use("/roomlist", roomlist);
 app.use("/", index);
 
 app.listen(app.get("port"), function() {
-    console.log("Take a listen to port: " + app.get("port"));
+    console.log("Application running on port: " + app.get("port"));
 });

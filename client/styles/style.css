@@ -99,6 +99,9 @@ CLEARFIX TO MAINTAIN BACKGROUND WITH FLOATED CONTENT
 /*********
 NAVIGATION
 *********/
+.navigation {
+  padding: 0;
+}
 .nav > li >  a{
     color: #363B16;
     background-color: #D2DB8C;
@@ -133,6 +136,9 @@ MAIN CONTENT STYLING
 }
 .section {
   margin: 25px 0;
+}
+.row {
+  margin: 0 7%;
 }
 /*********
 PLANT LIBRARY
@@ -234,6 +240,11 @@ SCALING LIGHTBOX
 .plant-icon {
   width: 100px;
   height: 100px;
+}
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
 }
 
 .image-slice {
