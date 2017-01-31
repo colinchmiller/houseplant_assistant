@@ -3,6 +3,29 @@
 // PLANT SELECTION CONTROLLER
 // ********
 
+
+myApp.directive('clickScroll', function(id){
+  return {
+    link: function($scope, element, iAttrs, controller){
+      console.log(element);
+      console.log($scope.water);
+      // element.bind('click', function(id){
+      //   $location.hash(id);
+      //   $anchorscroll();
+      // })
+    }
+  }
+})
+
+// myApp.directive('clickScroll', ['$scope', '$http', '$location', '$anchorScroll', function($scope, $location, $anchorScroll){
+//   console.log(element);
+//   element.bind('click', function(id){
+//     $location.hash(id);
+//     $anchorscroll();
+//   })
+// }])
+
+
 myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$anchorScroll', function($scope, $http, $location, $anchorScroll){
     console.log('WindowCriteriaController is now running');
 
@@ -118,6 +141,8 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
     // **********
     // SCROLLING BUTTON
     // **********
+
+
     $scope.scrollTo = function(id) {
       $location.hash(id);
       $anchorscroll();

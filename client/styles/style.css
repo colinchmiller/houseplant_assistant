@@ -116,12 +116,7 @@ NAVIGATION
   position: absolute;
   width: 100%;
 }
-.scroll-button {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  width: 200px;
-}
+
 /**********
 PLANT SELECTOR
 ***********/
@@ -167,6 +162,9 @@ PLANTULATE PAGE ALTERNATE STYLING
 }
 .container:nth-child(even) .text-block {
   border-top: 1px solid #ccc;
+}
+.container:nth-of-type(even) .down-icon {
+  fill: #ccc;
 }
 /*******
 COLUMN
@@ -223,13 +221,16 @@ SCALING LIGHTBOX
 }
 
 .down-icon {
-  fill: red;
+  fill: #363B16;
 }
 
 .scroll-icon {
+  margin-left: auto;
+  margin-right: auto;
   width: 75px;
   height: 75px;
 }
+
 .plant-icon {
   width: 100px;
   height: 100px;
