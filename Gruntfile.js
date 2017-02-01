@@ -53,6 +53,12 @@ module.exports = function(grunt){
                 src: '*.html',
                 dest: 'server/public/assets/views/templates/'
             },
+            htmlSvgs:{
+                expand: true,
+                cwd: 'client/views/svgs/',
+                src: '*.html',
+                dest: 'server/public/assets/views/svgs/'
+            },
             style: {
                 expand: true,
                 cwd: 'client/styles',

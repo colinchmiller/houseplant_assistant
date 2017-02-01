@@ -11,7 +11,7 @@ INTRODUCTION
       to be specific.</p>
       <!-- SCROLL BUTTON -->
       <div>
-        <div class="scroll-icon" ng-include="'/assets/views/templates/downIconSvg.html'" ng-click="scrollTo('nasa')"></div>
+        <div class="scroll-icon" ng-include="'/assets/views/svgs/downIconSvg.html'" ng-click="scrollTo('nasa')"></div>
       </div>
   </div>
 </div>
@@ -39,14 +39,16 @@ NASA EXPERIMENT
         targeting the liver, kidneys, heart, brain, and bone marrow. It can cause DNA and chromosomial
         damage and can cause leukemia in sufficient levels. OSHA recommends a maximum exposure limit of
         0.1 ppm over 8 hours.</p>
-        <div class="centered">
-          <img class="plant-icon" src="./vendors/images/Houseplant-Icon.png" ng-mouseenter="benzene=true" ng-mouseleave="benzene=false">
+        <div class="centered wide100"  ng-mouseenter="benzene=true" ng-mouseleave="benzene=false">
+          <div class="plant-icon" ng-include="'/assets/views/svgs/houseplant.html'"></div>
+          <div ng-show="benzene" class="plant-list">
+            <h5><b>Good Cleaners:</b></h5>
+            <h5>Gerbera Daisy</h5>
+            <h5>Pot Mum</h5>
+            <h5>Peace Lily</h5>
+          </div>
         </div>
-        <div ng-show="benzene" class="plant-list">
-          <h5>Gerbera Daisy</h5>
-          <h5>Pot Mum</h5>
-          <h5>Peace Lily</h5>
-        </div>
+
       </div>
       <div class="column">
         <h4>Trichloroethylene</h4>
@@ -56,15 +58,16 @@ NASA EXPERIMENT
           system, although it can also affect the liver and kidneys, causing intoxication similar to that
           of alcohol. SCOEL lists the maximum exposure limit of 10 ppm over 8 hours, or 30 ppm for a short
            term limit (15 minutes).</p>
-         <div class="centered">
-           <img class="plant-icon" src="./vendors/images/Houseplant-Icon.png" ng-mouseenter="trichlor=true" ng-mouseleave="trichlor=false">
+         <div class="centered wide100" ng-mouseenter="trichlor=true" ng-mouseleave="trichlor=false">
+           <div class="plant-icon" ng-include="'/assets/views/svgs/houseplant.html'"></div>
+           <div ng-show="trichlor" class="plant-list">
+             <h5><b>Good Cleaners:</b></h5>
+             <h5>Marginata</h5>
+             <h5>Gerbera Daisy</h5>
+             <h5>Mass Cane</h5>
+           </div>
          </div>
 
-        <div ng-show="trichlor" class="plant-list">
-          <h5>Marginata</h5>
-          <h5>Gerbera Daisy</h5>
-          <h5>Mass Cane</h5>
-        </div>
       </div>
       <div class="column">
         <h4>Formaldehyde</h4>
@@ -74,14 +77,16 @@ NASA EXPERIMENT
           and tobacco smoke, thus occurring wherever there is smog. It is toxic to all animals, causing
           eye and nasal irritation and is a known carcinogen. The maximum recommended concentration level
           is listed at 0.3 ppm.</p>
-        <div class="centered">
-          <img class="plant-icon" src="./vendors/images/Houseplant-Icon.png" ng-mouseenter="formald=true" ng-mouseleave="formald=false">
+        <div class="centered wide100" ng-mouseenter="formald=true" ng-mouseleave="formald=false">
+          <div class="plant-icon" ng-include="'/assets/views/svgs/houseplant.html'" ></div>
+          <div ng-show="formald" class="plant-list">
+            <h5><b>Good Cleaners:</b></h5>
+            <h5>Bamboo Palm</h5>
+            <h5>Mass Cane</h5>
+            <h5>Snake Plant</h5>
+          </div>
         </div>
-        <div ng-show="formald" class="plant-list">
-          <h5>Bamboo Palm</h5>
-          <h5>Mass Cane</h5>
-          <h5>Snake Plant</h5>
-        </div>
+
       </div>
     </div>
     <!-- ********
@@ -93,7 +98,7 @@ NASA EXPERIMENT
   </div>
   <!-- SCROLL BUTTON -->
   <div>
-    <div class="scroll-icon" ng-include="'/assets/views/templates/downIconSvg.html'" ng-click="scrollTo('houseplant')"></div>
+    <div class="scroll-icon" ng-include="'/assets/views/svgs/downIconSvg.html'" ng-click="scrollTo('houseplant')"></div>
   </div>
 
 </div>
@@ -107,7 +112,7 @@ HOUSEPLANT
     <p class="text-block">The interior of homes is a difficult place for plants to survive. This is no real surprise: homes are designed to be shelters for people from the elements. This causes three factors to limit a plant’s ability to survive. These are: lack of light, lack of water, and lack of soil/ soil nutrients in which to grow. Because of these limits, plant grown indoors generally have to be tough or require a great deal of effort to maintain. Let’s take a look at each of these limits on plants.</p>
     <!-- SCROLL BUTTON -->
     <div>
-      <div class="scroll-icon" ng-include="'/assets/views/templates/downIconSvg.html'" ng-click="scrollTo('light')"></div>
+      <div class="scroll-icon" ng-include="'/assets/views/svgs/downIconSvg.html'" ng-click="scrollTo('light')"></div>
     </div>
   </div>
 </div>
@@ -120,18 +125,20 @@ LIGHT
     <h2 class="header">Light</h2>
     <p class="text-block">Light is one of the most important things for a plant to have, and is also one of the factors that can vary the most inside a person’s home. Depending on the room’s number of windows, which way their facing, and whether there are any outside trees or buildings that could block sunlight getting in can result in full, bright, direct sunlight or almost non-existent light. In most homes, however, light levels tend to skew to the lower side. As a result, many popular houseplants do not require as much light to survive. These are often tropical understory plants that are used to low light conditions.</p>
     <p>To determine how bright your room is for picking the right houseplant, keep in mind that northern windows receive the least light, while southern-facing windows receive the most. If there are buildings or trees near the window, they’ll also block light. On the scale below, you can select a general estimate for the amount of natural light the tour room gets.</p>
-    <input ng-model="light" id="lightslider" type="range" min="0" max="10" step="1" value="0" ng-change="changeLight()"/>
-    <h3>{{light}}</h3>
+
     <!--****
     IMAGE BOX
     *****-->
-    <div class="box grouping">
+    <div class="box grouping centered" style="width: 500px;">
       <div class="lightbox" ng-model="light" ng-style="trulite"></div>
       <img src="./vendors/images/HouseplantLightScale.png">
     </div>
+    <input class="centered" ng-model="light" id="lightslider" type="range" min="0" max="10" step="1" value="0" ng-change="changeLight()"/>
+
+
     <!-- SCROLL BUTTON -->
     <div>
-      <div class="scroll-icon" ng-include="'/assets/views/templates/downIconSvg.html'" ng-click="scrollTo('space')"></div>
+      <div class="scroll-icon" ng-include="'/assets/views/svgs/downIconSvg.html'" ng-click="scrollTo('space')"></div>
     </div>
   </div>
 </div>
@@ -165,7 +172,7 @@ SPACE REQUIREMENTS
     </div>
     <!-- SCROLL BUTTON -->
     <div>
-      <div class="scroll-icon" ng-include="'/assets/views/templates/downIconSvg.html'" ng-click="scrollTo('water')"></div>
+      <div class="scroll-icon" ng-include="'/assets/views/svgs/downIconSvg.html'" ng-click="scrollTo('water')"></div>
     </div>
   </div>
 </div>
@@ -186,7 +193,7 @@ WATER
   </div>
   <!-- SCROLL BUTTON -->
   <div>
-    <div class="scroll-icon" ng-include="'/assets/views/templates/downIconSvg.html'" ng-click="scrollTo('toxicity')"></div>
+    <div class="scroll-icon" ng-include="'/assets/views/svgs/downIconSvg.html'" ng-click="scrollTo('toxicity')"></div>
   </div>
 </div>
 
@@ -210,7 +217,7 @@ TOXICITY
     </div>
     <!-- SCROLL BUTTON -->
     <div>
-      <div class="scroll-icon" ng-include="'/assets/views/templates/downIconSvg.html'" ng-click="scrollTo('submission')"></div>
+      <div class="scroll-icon" ng-include="'/assets/views/svgs/downIconSvg.html'" ng-click="scrollTo('submission')"></div>
     </div>
   </div>
 </div>

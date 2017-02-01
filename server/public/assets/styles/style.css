@@ -182,7 +182,9 @@ COLUMN
   padding: 15px;
 }
 .plant-list {
-  background-color: #ccc;
+  position: absolute;
+  background-color: #9FA66A;
+  padding: 10px;
 }
 .column h4 {
   text-align: center;
@@ -231,8 +233,7 @@ SCALING LIGHTBOX
 }
 
 .scroll-icon {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 25px auto;
   width: 75px;
   height: 75px;
 }
@@ -240,11 +241,17 @@ SCALING LIGHTBOX
 .plant-icon {
   width: 100px;
   height: 100px;
+  margin-top: 25px;
+  margin-bottom: 20px;
 }
+
 .centered {
   margin-left: auto;
   margin-right: auto;
+}
+.wide100 {
   width: 100px;
+  height:200px;
 }
 
 .image-slice {
@@ -255,3 +262,9 @@ SCALING LIGHTBOX
 .spacing-image {
   position: relative;
 }
+
+#lightslider {
+  width: 50%;
+}
+.stl0:hover{fill:none;stroke:#363B16;stroke-width:10;stroke-miterlimit:10;}
+.stl1:hover{fill:none;stroke:#363B16;stroke-width:10;stroke-miterlimit:10;}
