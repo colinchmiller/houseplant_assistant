@@ -133,7 +133,7 @@ LIGHT
       <div class="lightbox" ng-model="light" ng-style="trulite"></div>
       <img src="./vendors/images/HouseplantLightScale.png">
     </div>
-    <input class="centered" ng-model="light" id="lightslider" type="range" min="0" max="10" step="1" value="0" ng-change="changeLight()"/>
+    <input class="centered input-range" ng-model="light" id="lightslider" type="range" min="0" max="10" step="1" value="0" ng-change="changeLight()"/>
 
 
     <!-- SCROLL BUTTON -->
@@ -152,23 +152,25 @@ SPACE REQUIREMENTS
     <p class="text-block">Indoor plants obviously have less space available to them than if they were outdoors. The shortage is both in container space, which limits the ability of roots to spread out and find enough nutrients and water to feed the plant, and in the air height and width, which restricts the ability for the plant to spread out branches or leaves to collect enough sunlight to grow. Because windows, the light source for plants, are usually on the walls and not in the ceilings, plants have less incentive to grow tall indoors.</p>
     <p>For the purposes of determining the height of the plant in your home, we’ll focus just on the air height of the plant, and assume that you have at least a foot of space beneath these calculations for the height of the pot. On the sliders below, select the height and width you have available.</p>
     <div>
-      <p>First off, about how wide is the space that you have for your plant?</p>
-      <label for="width">Width in inches:</label>
-      <input type="text" name="width" id="width" ng-model="width" value={{width}} ng-change="scalingSize()" >
-      <input type="range" min="0" max="100" step="1" id="width" ng-model="width" ng-change="scalingSize()" >
-      <p>{{width}}</p>
-      <p>{{scalewidth}}</p>
-      <p>Next, how much height do you have available?</p>
-      <label for="height">Height:</label>
-      <input type="text" name="height" id="height" ng-model="height" value={{height}} ng-change="scalingSize()" >
-      <input type="range" min="0" max="100" step="1" id="height" ng-model="height" ng-change="scalingSize()" >
-      <p>{{height}}</p>
-      <p>{{scaleheight}}</p>
-      <div class="spacing-image">
+      <p>Approximately how large is your window in inches?</p>
+      <label class="centered label-text" for="width">Width:</label>
+      <input class="centered dimension-box" type="text" name="width" id="width" ng-model="width" value={{width}} ng-change="scalingSize()" >
+      <input class="centered input-range" type="range" min="0" max="100" step="1" id="width" ng-model="width" ng-change="scalingSize()" >
+<!-- DIMENSIONS FOR TESTING -->
+      <!-- <p>{{width}}</p>
+      <p>{{scalewidth}}</p> -->
+      <label class="centered label-text" for="height">Height:</label>
+      <input class="centered dimension-box" type="text" name="height" id="height" ng-model="height" value={{height}} ng-change="scalingSize()" >
+      <input class="centered input-range" type="range" min="0" max="100" step="1" id="height" ng-model="height" ng-change="scalingSize()" >
+<!-- DIMENSIONS FOR TESTING -->
+      <!-- <p>{{height}}</p>
+      <p>{{scaleheight}}</p> -->
+<!-- WINDOW IMAGE ************ NEEDS REFINEMENT BEFORE LAUNCH -->
+      <!-- <div class="spacing-image">
         <img class="image-slice" src="./vendors/images/SpacingCity.png">
         <img class="image-slice" src="./vendors/images/SpacingWindow.png" ng-style="scalewindow">
         <img class="image-slice" src="./vendors/images/SpacingHouseplant.png">
-      </div>
+      </div> -->
     </div>
     <!-- SCROLL BUTTON -->
     <div>
@@ -186,9 +188,17 @@ WATER
     <p class="text-block">Plants need water to process light energy into food. Generally, the less light that a plant is exposed to, the less water it needs to survive. But that’s not the only part of watering plants. Each plant variety requires different levels of water to survive, based upon the environment in which they’ve evolved. For some, having the roots frequently saturated with water will rot them, others depend on it to thrive. Every plant is more or less flexible with the water levels it needs. Many houseplants can handle infrequent watering periods, but not all.</p>
     <p>In choosing the best houseplant for you, we will use frequency of watering as an indicator of the plants’ health. This doesn’t mean that a specific plant needs more or less water overall, but more how tough it is in the face of neglect. Select on the sliding scale how frequently you think you would remember to water your houseplants.</p>
     <div ng-model="water">
-        <label>How frequently would you water your plant? (Infrequent to Frequent)</label>
-        <input type="range" min="0" max="100" step="1" value="0" id="height" ng-model="water">
-        <p>{{water}}</p>
+        <label class="centered label-text">How frequently would you water your plant?</label>
+        <div class="water-scale">
+          <div id="water-low" ng-include="'/assets/views/svgs/raindrop.html'"></div>
+          <div id="water-high" ng-include="'/assets/views/svgs/raindrop.html'"></div>
+          <input class="centered input-range" type="range" min="0" max="100" step="1" value="0" id="waterslider" ng-model="water">
+
+        </div>
+
+
+    <!-- DATA FOR TESTING -->
+        <!-- <p>{{water}}</p> -->
     </div>
   </div>
   <!-- SCROLL BUTTON -->
@@ -206,14 +216,21 @@ TOXICITY
     <p class="text-block">Many houseplants have become toxic to protect themselves in the wild, and this can become a concern for people bringing them into the home. Generally, a toxic plant is only poisonous if eaten, instead of being touched, and the toxicity is rarely fatal. While it is unlikely an adult will eat a toxic houseplants, they can be more of a danger to children, dogs, or cats, and can vary in level of toxicity between both the plant or the animal that is eating it.</p>
     <p>If you’re still interested in getting a houseplant that may be toxic to a child or pet, you can make it more difficult for the animal or child to reach the plant to eat it. Placing it high or in a closed room, or training your pet/child not to eat the plant are ways of preventing any accidental poisonings.</p>
     <div>
-        <label for="human">Have a child that you're concerned about eating the houseplants?:</label>
-        <input type="checkbox" name="human" id="human" ng-model="human">
-        <br>
-        <label for="cats">What about a cat?:</label>
-        <input type="checkbox" name="cats" id="cats" ng-model="cat">
-        <br>
-        <label for="dogs">Or perhaps a dog?:</label>
-        <input type="checkbox" name="dogs" id="dogs" ng-model="dog">
+      <div class="human-box">
+        <label for="human">Human</label>
+        <div class="checkbox" ng-include="'/assets/views/svgs/checkmark.html'" ng-click=toggleHuman()></div>
+      </div>
+
+      <div class="cat-box">
+        <label for="cats">Cat</label>
+        <div class="checkbox" ng-include="'/assets/views/svgs/checkmark.html'" ng-click=toggleCat()></div>
+      </div>
+
+      <div class="dog-box">
+        <label for="dogs">Dog</label>
+        <div class="checkbox" ng-include="'/assets/views/svgs/checkmark.html'" ng-click=toggleDog()></div>
+      </div>
+
     </div>
     <!-- SCROLL BUTTON -->
     <div>

@@ -263,8 +263,59 @@ SCALING LIGHTBOX
   position: relative;
 }
 
-#lightslider {
-  width: 50%;
+.input-range {
+  width: 50% !important;
+  margin-top:15px;
+  margin-bottom: 15px;
 }
+
 .stl0:hover{fill:none;stroke:#363B16;stroke-width:10;stroke-miterlimit:10;}
 .stl1:hover{fill:none;stroke:#363B16;stroke-width:10;stroke-miterlimit:10;}
+
+.label-text {
+  width: 50%;
+  display: block;
+  text-align: center;
+}
+.dimension-box {
+  text-align: center;
+  display: block;
+  width: 25%;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.dimension-box:focus {
+  outline: 2px solid #363B16;
+}
+
+#water-low, #water-high {
+
+  fill: #fff;
+}
+#water-low {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 79%;
+  top: -35%;
+}
+#water-high {
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  right: 15%;
+  top: -150%;
+}
+.water-scale {
+  position:relative;
+}
+
+.checkbox {
+  width: 100px;
+  height: 100px;
+  fill: #363B16;
+}
+
+.human-box, .cat-box, .dog-box{
+  display: inline-block;
+}

@@ -22,6 +22,41 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
     $scope.scaleheight = $scope.height * 5;
     $scope.scalewidth = $scope.width * 5;
 
+    // **********
+    // TOGGLE HUMAN
+    // **********
+    $scope.toggleHuman = function (){
+      if ($scope.human == false){
+        $scope.human = true;
+      } else {
+        $scope.human = false;
+      }
+      return $scope.human;
+    }
+
+    // **********
+    // TOGGLE CAT
+    // **********
+    $scope.toggleCat = function (){
+      if ($scope.cat == false){
+        $scope.cat = true;
+      } else {
+        $scope.cat = false;
+      }
+      return $scope.cat;
+    }
+
+    // **********
+    // TOGGLE DOG
+    // **********
+    $scope.toggleDog = function (){
+      if ($scope.dog == false){
+        $scope.dog = true;
+      } else {
+        $scope.dog = false;
+      }
+      return $scope.dog;
+    }
 
     // ************
     // ADJUST WINDOW WIDTH AND HEIGHT BY FACTOR OF 3 WITH SCALE CHANGE
