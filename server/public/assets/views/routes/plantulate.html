@@ -215,20 +215,20 @@ TOXICITY
     <h2 class="header">Toxicity</h2>
     <p class="text-block">Many houseplants have become toxic to protect themselves in the wild, and this can become a concern for people bringing them into the home. Generally, a toxic plant is only poisonous if eaten, instead of being touched, and the toxicity is rarely fatal. While it is unlikely an adult will eat a toxic houseplants, they can be more of a danger to children, dogs, or cats, and can vary in level of toxicity between both the plant or the animal that is eating it.</p>
     <p>If you’re still interested in getting a houseplant that may be toxic to a child or pet, you can make it more difficult for the animal or child to reach the plant to eat it. Placing it high or in a closed room, or training your pet/child not to eat the plant are ways of preventing any accidental poisonings.</p>
-    <div>
+    <div class="selection-boxes">
       <div class="human-box">
         <label for="human">Human</label>
-        <div class="checkbox" ng-include="'/assets/views/svgs/checkmark.html'" ng-click=toggleHuman()></div>
+        <div class="checkbox" ng-include="'/assets/views/svgs/checkmark.html'" ng-click="toggleHuman()" ng-style="clickStyleHuman"></div>
       </div>
 
       <div class="cat-box">
         <label for="cats">Cat</label>
-        <div class="checkbox" ng-include="'/assets/views/svgs/checkmark.html'" ng-click=toggleCat()></div>
+        <div class="checkbox" ng-include="'/assets/views/svgs/checkmark.html'" ng-click="toggleCat();" ng-style="clickStyleCat"></div>
       </div>
 
       <div class="dog-box">
         <label for="dogs">Dog</label>
-        <div class="checkbox" ng-include="'/assets/views/svgs/checkmark.html'" ng-click=toggleDog()></div>
+        <div class="checkbox" ng-include="'/assets/views/svgs/checkmark.html'" ng-click="toggleDog();" ng-style="clickStyleDog"></div>
       </div>
 
     </div>

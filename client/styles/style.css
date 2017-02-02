@@ -289,7 +289,6 @@ SCALING LIGHTBOX
 }
 
 #water-low, #water-high {
-
   fill: #fff;
 }
 #water-low {
@@ -315,7 +314,21 @@ SCALING LIGHTBOX
   height: 100px;
   fill: #363B16;
 }
+.checkbox:hover {
+  fill: #fff;
+}
+.checkbox:active {
+  fill: #fff;
+}
 
 .human-box, .cat-box, .dog-box{
   display: inline-block;
+  margin: 0 7%;
+}
+
+
+.selection-boxes {
+  margin: 45px auto 30px;
+  width: 50%;
+  text-align: center;
 }

@@ -28,8 +28,10 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
     $scope.toggleHuman = function (){
       if ($scope.human == false){
         $scope.human = true;
+        $scope.clickStyleHuman = {'fill': '#fff'};
       } else {
         $scope.human = false;
+        $scope.clickStyleHuman = {};
       }
       return $scope.human;
     }
@@ -40,8 +42,10 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
     $scope.toggleCat = function (){
       if ($scope.cat == false){
         $scope.cat = true;
+        $scope.clickStyleCat = {'fill': '#fff'};
       } else {
         $scope.cat = false;
+        $scope.clickStyleCat = {};
       }
       return $scope.cat;
     }
@@ -52,8 +56,10 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
     $scope.toggleDog = function (){
       if ($scope.dog == false){
         $scope.dog = true;
+        $scope.clickStyleDog = {'fill': '#fff'};
       } else {
         $scope.dog = false;
+        $scope.clickStyleDog = {};
       }
       return $scope.dog;
     }
