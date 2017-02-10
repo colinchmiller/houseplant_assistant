@@ -13,9 +13,9 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
     $scope.cat = false;
     $scope.dog = false;
     $scope.human = false;
+    $scope.query = {};
 
-    var query = {"light" : $scope.light, "width" : $scope.width, "height" : $scope.height, "water" : $scope.water,
-                  "cat" : $scope.cat, "dog" : $scope.dog, "human" : $scope.human};
+
 
     $scope.trulite = {"background-color": "#000"}
     $scope.scalewindow = {"height" : $scope.scaleheight+"px", "width" : $scope.scalewidth+"px"}
@@ -157,34 +157,35 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
       $anchorScroll();
     }
 
+    // QUERY UPDATE
+    $scope.queryUpdate = function(){
+      $scope.query = { light : $scope.light,
+                    width : $scope.width,
+                    height : $scope.height,
+                    water : $scope.water,
+                    cat : $scope.cat,
+                    dog : $scope.dog,
+                    human : $scope.human };
+    }
+
+
     // *********
     // PLANT SUGGESTION
     // *********
 
     $scope.suggestPlant = function(){
-      console.log("The query is: " + query);
-      console.log("query.light: " + query.light);
+      $scope.queryUpdate();
+      console.log("The query is: " + $scope.query);
+      console.log("query.dog: " + $scope.query.dog);
       $http({
         method: "GET",
         url: "/plants",
-        params: {"query" : query}
-      })
+        params: $scope.query
+      }).then(
+        function(response) {
+          console.log("The response: ", response);
+        }
+      )
     }
-
-    // $scope.suggestPlant = function(){
-    //
-        // $http({
-        //     method: "GET",
-        //     url: "/plants"
-        // }).then(
-        //     function (response) {
-        //         console.log("Here is the plant data: ", response);
-        //         console.log("Here is the window data: ", $scope.windowData);
-        //         $scope.plants = response.data;
-        //         $scope.suggestionLogic();
-        //     });
-    // };
-
-
 
 }]);

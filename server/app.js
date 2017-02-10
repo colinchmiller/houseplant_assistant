@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 
 //Routes
 var index = require('./routes/index');
-var plants = require('./routes/plants.js');
+var plants = require('./routes/plants');
 var windows = require('./routes/windows');
 var windownames = require('./routes/windownames');
 var windowplants = require('./routes/windowplants');

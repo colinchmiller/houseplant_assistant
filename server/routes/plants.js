@@ -9,19 +9,11 @@ router.get('/', function (req,res){
   var param = req.query;
   console.log("req.query " + req.query);
   console.log("Param: " + param);
-  console.log("light value: " + param.light);
+  console.log("dog value: " + param.dog);
   results = [];
   pg.connect(connectionString, function(err, client, done){
-      var query = client.query("SELECT *\
-          FROM plants\
-          WHERE ? >= min_light\
-          AND ?  <= max_light\
-          AND ?  >= min_width\
-          AND ?  >= min_height\
-          AND ?  >= min_water\
-          AND ? == cat\
-          AND ?  == dog\
-          AND ?  == human", [param.light, param.light, param.width, param.height, param.water, param.cat, param.dog, param.human]);
+      var query = client.query("SELECT * FROM plants WHERE $1 >= min_light AND $2  <= max_light AND $3  >= min_width AND $4  >= min_height AND $5 >= min_water ",
+       [param.light, param.light, param.width, param.height, param.water]);
 
       query.on('row', function(row){
           results.push(row);
@@ -37,5 +29,5 @@ router.get('/', function (req,res){
       }
     });
 });
-
+// AND $6 == cat AND $7 == dog AND $8 == human  , param.cat, param.dog, param.human
 module.exports = router;
