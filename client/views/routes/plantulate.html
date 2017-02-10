@@ -246,14 +246,14 @@ SUGGEST PLANT BUTTON
   <div class="suggest">
     <input class="btn submit" type="submit" ng-click="suggestPlant()" value="Suggest Plants"/>
   </div>
-    <p>Light: {{light}}</p>
+    <!-- <p>Light: {{light}}</p>
     <p>Width: {{width}}</p>
     <p>Height: {{height}}</p>
     <p>Water: {{water}}</p>
     <p>Cats: {{cat}}</p>
     <p>Dogs: {{dog}}</p>
-    <p>Human: {{human}}</p>
-    <div class="container" ng-repeat = "plant in suggestedPlants">
-        <h4>{{plant.name}}</h4>
+    <p>Human: {{human}}</p> -->
+    <div class="container" ng-repeat="plant in suggestedplants">
+        <h4>{{plant.plant_name}}</h4>
     </div>
 </div>

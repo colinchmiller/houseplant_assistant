@@ -14,6 +14,7 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
     $scope.dog = false;
     $scope.human = false;
     $scope.query = {};
+    $scope.suggestedplants = [];
 
 
 
@@ -172,7 +173,6 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
     // *********
     // PLANT SUGGESTION
     // *********
-
     $scope.suggestPlant = function(){
       $scope.queryUpdate();
       console.log("The query is: " + $scope.query);
@@ -183,7 +183,8 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
         params: $scope.query
       }).then(
         function(response) {
-          console.log("The response: ", response);
+          $scope.suggestedplants = response.data;
+          console.log("Suggested plants are: ", $scope.suggestedplants);
         }
       )
     }
