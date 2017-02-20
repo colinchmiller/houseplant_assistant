@@ -196,6 +196,8 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
     // ***********
     // TOXICITY TESTS
     // ***********
+
+    // CAT
     $scope.catToxicityTest = function(data){
       if($scope.query.cat == false){
         $scope.catClear = data;
@@ -203,30 +205,45 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
         var data = data.data;
         console.log("Dude, are you even alive? ", data);
         for(i=0; i<data.length; i++){
-          console.log("The data[i].plant_name: ", data[i].plant_name);
+          if(data[i].cat == false){
+            $scope.catClear.push(data[i]);
+          }
         }
+        console.log("The catClear Array: ", $scope.catClear);
       }
       return $scope.catClear;
     }
 
+    // DOG
     $scope.dogToxicityTest = function(data){
       if($scope.query.dog == false){
         $scope.dogClear = data;
       } else {
+        var data = data.data;
+        console.log("Dude, are you even alive? ", data);
         for(i=0; i<data.length; i++){
-          console.log("The data[i].name: ", data[i].name);
+          if(data[i].dog == false){
+            $scope.dogClear.push(data[i]);
+          }
         }
+        console.log("The dogClear Array: ", $scope.dogClear);
       }
       return $scope.dogClear;
     }
 
+    // HUMAN
     $scope.humanToxicityTest = function(data){
       if($scope.query.human == false){
         $scope.humanClear = data;
       } else {
-        for(i=0; i<=data.length; i++){
-          console.log("The data[i].name: ", data[i].name);
+        var data = data.data;
+        console.log("Dude, are you even alive? ", data);
+        for(i=0; i<data.length; i++){
+          if(data[i].human == false){
+            $scope.humanClear.push(data[i]);
+          }
         }
+        console.log("The humanClear Array: ", $scope.humanClear);
       }
       return $scope.humanClear;
     }
