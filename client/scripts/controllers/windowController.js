@@ -175,8 +175,6 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
     // *********
     $scope.suggestPlant = function(){
       $scope.queryUpdate();
-      console.log("The query is: " + $scope.query);
-      console.log("query.dog: " + $scope.query.dog);
       $http({
         method: "GET",
         url: "/plants",
@@ -184,12 +182,13 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
       }).then(
         function(response) {
           $scope.suggestplants = [];
-          $scope.catClear = response;
+          $scope.catClear = [];
           $scope.dogClear = [];
+          $scope.humanClear = [];
 
-          $scope.catToxicityTest($scope.catClear);
-
-          //$scope.humanToxicityTest($scope.dogClear);
+          $scope.catToxicityTest(response);
+          $scope.dogToxicityTest(response);
+          $scope.humanToxicityTest(response);
           console.log("Suggested plants are: ", $scope.suggestedplants);
         });
       }
@@ -199,17 +198,37 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
     // ***********
     $scope.catToxicityTest = function(data){
       if($scope.query.cat == false){
-        $scope.dogClear = data;
+        $scope.catClear = data;
       } else {
-        for(i=0; i<=data.length; i++){
-          console.log("The data.name: ", data.name);
+        var data = data.data;
+        console.log("Dude, are you even alive? ", data);
+        for(i=0; i<data.length; i++){
+          console.log("The data[i].plant_name: ", data[i].plant_name);
         }
       }
-      $scope.dogToxicityTest($scope.dogClear);
+      return $scope.catClear;
     }
 
     $scope.dogToxicityTest = function(data){
-      console.log("The data being used in the dog toxicity function: ", data);
+      if($scope.query.dog == false){
+        $scope.dogClear = data;
+      } else {
+        for(i=0; i<data.length; i++){
+          console.log("The data[i].name: ", data[i].name);
+        }
+      }
+      return $scope.dogClear;
+    }
+
+    $scope.humanToxicityTest = function(data){
+      if($scope.query.human == false){
+        $scope.humanClear = data;
+      } else {
+        for(i=0; i<=data.length; i++){
+          console.log("The data[i].name: ", data[i].name);
+        }
+      }
+      return $scope.humanClear;
     }
 
 }]);
