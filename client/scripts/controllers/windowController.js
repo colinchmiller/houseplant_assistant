@@ -183,10 +183,33 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
         params: $scope.query
       }).then(
         function(response) {
-          $scope.suggestedplants = response.data;
+          $scope.suggestplants = [];
+          $scope.catClear = response;
+          $scope.dogClear = [];
+
+          $scope.catToxicityTest($scope.catClear);
+
+          //$scope.humanToxicityTest($scope.dogClear);
           console.log("Suggested plants are: ", $scope.suggestedplants);
+        });
+      }
+
+    // ***********
+    // TOXICITY TESTS
+    // ***********
+    $scope.catToxicityTest = function(data){
+      if($scope.query.cat == false){
+        $scope.dogClear = data;
+      } else {
+        for(i=0; i<=data.length; i++){
+          console.log("The data.name: ", data.name);
         }
-      )
+      }
+      $scope.dogToxicityTest($scope.dogClear);
+    }
+
+    $scope.dogToxicityTest = function(data){
+      console.log("The data being used in the dog toxicity function: ", data);
     }
 
 }]);
