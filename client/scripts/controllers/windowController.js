@@ -186,10 +186,12 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
           $scope.dogClear = [];
           $scope.humanClear = [];
 
-          $scope.catToxicityTest(response);
-          $scope.dogToxicityTest(response);
-          $scope.humanToxicityTest(response);
-          console.log("Suggested plants are: ", $scope.suggestedplants);
+          // $scope.catToxicityTest(response);
+          // $scope.dogToxicityTest(response);
+          // $scope.humanToxicityTest(response);
+          // $scope.toxicityConsolidate();
+
+          $scope.suggestPlants(response);
         });
       }
 
@@ -197,55 +199,107 @@ myApp.controller('WindowCriteriaController', ['$scope', '$http', '$location', '$
     // TOXICITY TESTS
     // ***********
 
-    // CAT
-    $scope.catToxicityTest = function(data){
-      if($scope.query.cat == false){
-        $scope.catClear = data;
-      } else {
-        var data = data.data;
-        console.log("Dude, are you even alive? ", data);
-        for(i=0; i<data.length; i++){
-          if(data[i].cat == false){
-            $scope.catClear.push(data[i]);
+    $scope.suggestPlants = function(data){
+
+      var data = data.data;
+      $scope.suggestedplants = data;
+
+      if($scope.query.dog == true){
+        for (var i = $scope.suggestedplants.length - 1; i >= 0; i--) {
+          if($scope.suggestedplants[i].dog == true){
+          $scope.suggestedplants.splice(i, 1);
           }
         }
-        console.log("The catClear Array: ", $scope.catClear);
       }
-      return $scope.catClear;
+      console.log("Cleared dog filter: ", $scope.suggestedplants);
+      $scope.catTest();
     }
 
-    // DOG
-    $scope.dogToxicityTest = function(data){
-      if($scope.query.dog == false){
-        $scope.dogClear = data;
-      } else {
-        var data = data.data;
-        console.log("Dude, are you even alive? ", data);
-        for(i=0; i<data.length; i++){
-          if(data[i].dog == false){
-            $scope.dogClear.push(data[i]);
+    $scope.catTest = function(){
+
+      if($scope.query.cat == true){
+        for (var i = $scope.suggestedplants.length - 1; i >= 0; i--) {
+          if($scope.suggestedplants[i].cat == true){
+          $scope.suggestedplants.splice(i, 1);
           }
         }
-        console.log("The dogClear Array: ", $scope.dogClear);
       }
-      return $scope.dogClear;
+      console.log("Cleared cat filter: ", $scope.suggestedplants);
+      $scope.humanTest();
     }
 
-    // HUMAN
-    $scope.humanToxicityTest = function(data){
-      if($scope.query.human == false){
-        $scope.humanClear = data;
-      } else {
-        var data = data.data;
-        console.log("Dude, are you even alive? ", data);
-        for(i=0; i<data.length; i++){
-          if(data[i].human == false){
-            $scope.humanClear.push(data[i]);
-          }
-        }
-        console.log("The humanClear Array: ", $scope.humanClear);
+
+
+$scope.humanTest = function(){
+
+  if($scope.query.human == true){
+    for (var i = $scope.suggestedplants.length - 1; i >= 0; i--) {
+      if($scope.suggestedplants[i].human == true){
+      $scope.suggestedplants.splice(i, 1);
       }
-      return $scope.humanClear;
     }
+  }
+  console.log("Cleared human filter: ", $scope.suggestedplants);
+}
+
+
+    // // CAT
+    // $scope.catToxicityTest = function(data){
+    //   if($scope.query.cat == false){
+    //     $scope.catClear = data;
+    //   } else {
+    //     var data = data.data;
+    //     console.log("Dude, are you even alive? ", data);
+    //     for(i=0; i<data.length; i++){
+    //       if(data[i].cat == false){
+    //         $scope.catClear.push(data[i]);
+    //       }
+    //     }
+    //     console.log("The catClear Array: ", $scope.catClear);
+    //   }
+    //   return $scope.catClear;
+    // }
+    //
+    // // DOG
+    // $scope.dogToxicityTest = function(data){
+    //   if($scope.query.dog == false){
+    //     $scope.dogClear = data;
+    //   } else {
+    //     var data = data.data;
+    //     console.log("Dude, are you even alive? ", data);
+    //     for(i=0; i<data.length; i++){
+    //       if(data[i].dog == false){
+    //         $scope.dogClear.push(data[i]);
+    //       }
+    //     }
+    //     console.log("The dogClear Array: ", $scope.dogClear);
+    //   }
+    //   return $scope.dogClear;
+    // }
+    //
+    // // HUMAN
+    // $scope.humanToxicityTest = function(data){
+    //   if($scope.query.human == false){
+    //     $scope.humanClear = data;
+    //   } else {
+    //     var data = data.data;
+    //     console.log("Dude, are you even alive? ", data);
+    //     for(i=0; i<data.length; i++){
+    //       if(data[i].human == false){
+    //         $scope.humanClear.push(data[i]);
+    //       }
+    //     }
+    //     console.log("The humanClear Array: ", $scope.humanClear);
+    //   }
+    //   return $scope.humanClear;
+    // }
+    //
+    // // TOXICITY CONSOLIDATION
+    // $scope.toxicityConsolidate = function(){
+    //   console.log("catClear: ", $scope.catClear);
+    //   console.log("dogClear: ", $scope.dogClear);
+    //   console.log("humanClear: ", $scope.humanClear);
+    //
+    // }
 
 }]);
