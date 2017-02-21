@@ -211,6 +211,7 @@ SCALING LIGHTBOX
 .suggest {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 50px;
   width: 300px;
 }
 .submit {
