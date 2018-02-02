@@ -1,4 +1,4 @@
-module.exports = function(grunt){
+grumodule.exports = function(grunt){
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         uglify: {

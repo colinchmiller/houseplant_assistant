@@ -228,9 +228,12 @@ SCALING LIGHTBOX
   border: none;
   background-color: #fff;
 }
-
+ 
 .down-icon {
   fill: #363B16;
+}
+.down-icon:hover {
+  fill: #fff;
 }
 
 .scroll-icon {
@@ -238,6 +241,7 @@ SCALING LIGHTBOX
   width: 75px;
   height: 75px;
 }
+
 
 .plant-icon {
   width: 100px;

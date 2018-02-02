@@ -172,6 +172,9 @@ PLANTULATE PAGE ALTERNATE STYLING
 .container:nth-of-type(even) .down-icon {
   fill: #ccc;
 }
+.container:nth-of-type(even) .down-icon:hover {
+  fill: #363B16;
+}
 /*******
 COLUMN
 *******/
